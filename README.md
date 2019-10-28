@@ -34,6 +34,6 @@ All source code is licensed under the [MIT License](https://raw.github.com/rs/SD
 
 ## Author
 
-- [x] Created by HUANG BAOAN I on 2019.
+- [x] Created by HUANG BAOAN on 2019.
 - [x] GuangZhou City. CN 510000 
 - [x] [https://www.sweetman.cc](https://www.sweetman.cc)
