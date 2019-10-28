@@ -1,4 +1,4 @@
-###iJSON Generator
+## iJSON Generator
 A simple mac app to generator JSON text to swift model file.
 
 [![License](https://img.shields.io/cocoapods/l/SMInstagramPhotoPicker.svg?style=flat)](http://cocoapods.org/pods/SMInstagramPhotoPicker)
