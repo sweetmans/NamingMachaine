@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :macos, '12.0'
+platform :macos, '10.12'
 
 target 'iJSON' do
   # Comment the next line if you don't want to use dynamic frameworks

@@ -19,8 +19,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         
         self.window.delegate = self
-        self.window.titleVisibility = .hidden
-        self.window.titlebarAppearsTransparent = true
         
         self.window.contentView?.addSubview(rootViewController.view)
         rootViewController.view.frame = self.window.contentView?.bounds ?? NSRect.zero
