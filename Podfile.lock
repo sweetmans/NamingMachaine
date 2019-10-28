@@ -1,0 +1,20 @@
+PODS:
+  - FilesProvider (0.26.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - FilesProvider
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - FilesProvider
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  FilesProvider: 2a8ae17d8b9c23a6feadb1308ee638fa31d21065
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 9664cbea8cc002f8ee569fb9179427e617303362
+
+COCOAPODS: 1.8.3
