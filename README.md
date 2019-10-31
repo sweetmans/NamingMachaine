@@ -11,6 +11,14 @@ A simple mac app to generator JSON text to swift model file.
 - [x] Support Swift 4 and above
 - [x] Support SwityJSON Framework
 
+## todo
+
+- [x] IMP Left side table view to show JSON struct with json formate.
+- [x] Support original JSONDecoder
+- [x] Support YYKit for Objective-C
+
+### If you want join & contribute code, just implement and send pull-request. Thanks for help.
+
 ## Requirements
 
 - macOS 10.12 or later
