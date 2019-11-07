@@ -9,6 +9,7 @@
 import Cocoa
 import SwiftyJSON
 import FilesProvider
+import EasyPeasy
 
 //TODO: - Display Formating JSON text to the table view with lines
 
@@ -30,7 +31,7 @@ class MainController: NSViewController {
     //MARK: - <====== IB Outlet ======>
     
     //Line of Rows
-    var numberOfLine: Int = 0
+    var rows: [JSONRow] = []
     
     //lineClipView
     @IBOutlet weak var lineClipView: NSClipView!
@@ -58,7 +59,6 @@ class MainController: NSViewController {
     
     //MARK: - <====== Preparing things<##> ======>
     func prepareForTableView() {
-        numberOfLine = 2;
         lineTableView.dataSource = self
         lineTableView.delegate = self
         lineTableView.reloadData()
@@ -88,10 +88,25 @@ class MainController: NSViewController {
             return
         }
         
-        print("rootNameTextField.stringValue:", rootNameTextField.stringValue)
+        //start generate file
         genarateFile(fileName: rootNameTextField.stringValue)
         
     }
+    
+    private func showFileGenerateController() {
+        
+        let mvc = FileGenerateController(windowNibName: "FileGenerateController")
+        
+        if let window = mvc.window {
+            
+            
+            NSApp.mainWindow?.beginCriticalSheet(window, completionHandler: { (resp) in
+                
+            })
+        }
+        
+    }
+    
     
     //genarate file to `~/Downloads` folder
     private func genarateFile(fileName: String) {
@@ -121,7 +136,7 @@ class MainController: NSViewController {
 extension MainController: NSTableViewDataSource, NSTableViewDelegate {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 2;
+        return rows.count;
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -131,15 +146,60 @@ extension MainController: NSTableViewDataSource, NSTableViewDelegate {
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        let view: NSView = NSView(frame: NSRect(x: 0, y: 0, width: 20, height: 20))
-        let label: NSTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: 20, height: 20))
-        label.stringValue = "\(row + 1)"
-        label.font = NSFont.systemFont(ofSize: 12, weight: .medium)
-        label.isBordered = false
-        label.backgroundColor = NSColor.textBackgroundColor
-        label.alignment = .center
-        view.addSubview(label)
-        return view
+        //content column
+        if let identifier = tableColumn?.identifier.rawValue,
+            identifier == "content" {
+            //Container View
+            let view: NSView = NSView(frame: NSRect(x: 0, y: 0, width: tableColumn?.width ?? 0, height: 20))
+            //Margin for each level leading
+            let leadingMargin: CGFloat = 30.0
+            
+            //Key label
+            let keyLabel: NSTextField = NSTextField()
+            let keyValue: String = rows[row].key == "" ? "" : "\"\(rows[row].key)\" :"
+            keyLabel.stringValue =  keyValue
+            keyLabel.font = NSFont.systemFont(ofSize: 12, weight: .bold)
+            keyLabel.isBordered = false
+            keyLabel.textColor = JSONRow.keyColor
+            keyLabel.alignment = .left
+            
+            //to caculate key string label content size width
+            let caculateString: NSString = NSString(string: keyValue)
+            let width = caculateString.boundingRect(with: NSSize(width: 300, height: 20), options: NSString.DrawingOptions.usesFontLeading, attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 12, weight: .bold)]).width + 5
+            
+            view.addSubview(keyLabel)
+            
+            //Auto layout
+            let keyLabelLeading: CGFloat = CGFloat(rows[row].level) * leadingMargin
+            keyLabel <- [Width(width), Leading(keyLabelLeading), Height(20), Top(0)]
+            
+            
+            //Value label
+            let valueLabel: NSTextField = NSTextField()
+            valueLabel.stringValue =  "\(rows[row].value)"
+            valueLabel.font = NSFont.systemFont(ofSize: 12, weight: .bold)
+            valueLabel.isBordered = false
+            valueLabel.textColor = rows[row].color
+            valueLabel.alignment = .left
+            
+            view.addSubview(valueLabel)
+            //Auto layout
+            let valueLabelLeading: CGFloat = CGFloat(rows[row].level) * leadingMargin + width
+            valueLabel <- [Trailing(0), Leading(valueLabelLeading), Height(20), Top(0)]
+            
+            return view
+            
+        }else{//line column
+            let view: NSView = NSView(frame: NSRect(x: 0, y: 0, width: tableColumn?.width ?? 0, height: 20))
+            let label: NSTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: tableColumn?.width ?? 0, height: 20))
+            label.stringValue = "\(row + 1)"
+            label.font = NSFont.systemFont(ofSize: 12, weight: .bold)
+            label.isBordered = false
+            label.backgroundColor = NSColor.textBackgroundColor
+            label.alignment = .center
+            view.addSubview(label)
+            return view
+        }
     }
     
 }
@@ -190,6 +250,9 @@ extension MainController: NSTextViewDelegate {
                 dicnaryObject = d
                 iSSourceJsonTextVaild = true
                 textField.textColor = .systemGreen
+                
+                //Root key must be empty
+                rows = JSONRow.getRowsFrom(dictionary: d, rootLevel: 0, rootKey: "")
             }else{
                 textField.textColor = .systemRed
                 showJsonIsNotDcitionaryError()

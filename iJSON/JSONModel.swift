@@ -78,23 +78,24 @@ extension JSONModel {
         
         var text: String = ""
         
+        //if level equel 0 mean is root objet, And Create file name using root object name.
         if (self.level == 0) {
             fileName = "\(name).swift"
             text.append(creatCopyrightString())
         }
         
-        //创建结构体        
+        //Create StructX
         return "\(text)\(createStruct(text: text))"
     }
     
-    //头部描述文本
+    //copy right string
     private func creatCopyrightString() -> String {
         
         return "//\n//  \(fileName)\n//  Replace with your project name. \n//\n//  Created by iJSON Model Generator on \(getTimeString()).\n//  Copyright © \(getYearString()) Replace with your organization name. All rights reserved.\n//\n\nimport Foundation\nimport SwiftyJSON\n\n\n"
         
     }
     
-    //获取时间
+    //get date
     private func getTimeString() -> String {
         
         let formate: DateFormatter = DateFormatter()
@@ -104,7 +105,7 @@ extension JSONModel {
         return formate.string(from: Date())
     }
     
-    //获取年
+    //get year string
     private func getYearString() -> String {
         
         let formate: DateFormatter = DateFormatter()
@@ -115,7 +116,7 @@ extension JSONModel {
     }
     
     
-    //创建结构
+    //func create ctruct
     private func createStruct(text: String) -> String {
         
         let newText = createStructProperty(text: text)
@@ -141,7 +142,7 @@ extension JSONModel {
         return impText
     }
     
-    //创建结构体属性
+    //create struct property
     private func createStructProperty(text: String) -> String {
         
         var text: String = "//MARK - \(name)\nstruct \(name) {\n\n    //Propertys\n"

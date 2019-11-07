@@ -40,11 +40,11 @@
                             <rect key="frame" x="0.0" y="555" width="816" height="50"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-YC-ydm">
-                                    <rect key="frame" x="284" y="17" width="248" height="16"/>
+                                    <rect key="frame" x="288" y="17" width="240" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="16" id="ppu-Ar-oxz"/>
                                     </constraints>
-                                    <textFieldCell key="cell" lineBreakMode="clipping" title="JSON TEXT FORMETTER  GENERRATOR" id="cCR-PS-RPu">
+                                    <textFieldCell key="cell" lineBreakMode="clipping" title="JSON TEXT FORMETTER  GENERATOR" id="cCR-PS-RPu">
                                         <font key="font" usesAppearanceFont="YES"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -72,7 +72,7 @@
                                         <tableColumns>
                                             <tableColumn identifier="line" width="40" minWidth="40" maxWidth="40" id="Y6f-nI-bUd">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Line">
-                                                    <font key="font" metaFont="message" size="11"/>
+                                                    <font key="font" metaFont="controlContent" size="11"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </tableHeaderCell>
@@ -85,7 +85,7 @@
                                             </tableColumn>
                                             <tableColumn identifier="content" width="509" minWidth="320" maxWidth="6000" id="asV-lL-Mri">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="json">
-                                                    <font key="font" metaFont="message" size="11"/>
+                                                    <font key="font" metaFont="controlContent" size="11"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </tableHeaderCell>
@@ -124,7 +124,7 @@
                                         <constraint firstAttribute="height" constant="16" id="d7Z-zv-amI"/>
                                     </constraints>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Input your JSON Source here (press Enter)" id="aQ9-Ha-z1d">
-                                        <font key="font" metaFont="cellTitle"/>
+                                        <font key="font" metaFont="label" size="12"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -135,7 +135,7 @@
                                         <constraint firstAttribute="height" constant="16" id="OLS-7s-2qV"/>
                                     </constraints>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Language" id="wTI-dr-7oO">
-                                        <font key="font" metaFont="cellTitle"/>
+                                        <font key="font" metaFont="label" size="12"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -143,7 +143,7 @@
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8QD-AR-7rc">
                                     <rect key="frame" x="10" y="263" width="67" height="15"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Framework" id="6WM-UQ-UAX">
-                                        <font key="font" metaFont="cellTitle"/>
+                                        <font key="font" metaFont="label" size="12"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -229,14 +229,17 @@
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ndq-id-Erd">
                                     <rect key="frame" x="10" y="165" width="108" height="15"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Root Object Name" id="4Hj-hS-jMr">
-                                        <font key="font" metaFont="cellTitle"/>
+                                        <font key="font" metaFont="label" size="12"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c8I-Mr-GzJ">
-                                    <rect key="frame" x="12" y="137" width="128" height="20"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="border" placeholderString="eg. UserProfile" drawsBackground="YES" id="YIx-Zy-yFK">
+                                    <rect key="frame" x="12" y="135" width="128" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="UBE-sb-2eJ"/>
+                                    </constraints>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" placeholderString="eg. UserProfile" bezelStyle="round" id="YIx-Zy-yFK">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -300,7 +303,7 @@
                 <constraint firstAttribute="trailing" secondItem="uBE-ce-dnY" secondAttribute="trailing" id="KNA-o1-9MS"/>
                 <constraint firstItem="uBE-ce-dnY" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="oUU-tl-9g8"/>
             </constraints>
-            <point key="canvasLocation" x="90" y="125.5"/>
+            <point key="canvasLocation" x="159" y="130"/>
         </customView>
     </objects>
 </document>

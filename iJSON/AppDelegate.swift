@@ -19,7 +19,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         
         self.window.delegate = self
-        
+        self.window.makeMain()
+        self.window.makeKey()
         self.window.contentView?.addSubview(rootViewController.view)
         rootViewController.view.frame = self.window.contentView?.bounds ?? NSRect.zero
         
@@ -57,6 +58,10 @@ extension AppDelegate: NSWindowDelegate {
         
     }
     
+    //If close the main window, terminate app.
+    func windowWillClose(_ notification: Notification) {
+        NSApplication.shared.terminate(self)
+    }
     
 }
 

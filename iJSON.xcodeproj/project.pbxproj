@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3F4081405237EA80A923CB8C /* Pods_iJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D270DA75BAE059660B206D9 /* Pods_iJSON.framework */; };
+		4064782E236C6E8F0099C125 /* JSONRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064782D236C6E8F0099C125 /* JSONRow.swift */; };
 		40A547D623669F2900CE8A21 /* ModelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A547D523669F2900CE8A21 /* ModelValue.swift */; };
+		40A547EA2367361D00CE8A21 /* FileGenerateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A547E92367361D00CE8A21 /* FileGenerateController.xib */; };
+		40A547EE23674BC700CE8A21 /* FileGenerateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A547ED23674BC700CE8A21 /* FileGenerateController.swift */; };
 		40C5FC292357FD2D00910E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C5FC282357FD2D00910E7E /* AppDelegate.swift */; };
 		40C5FC2B2357FD2E00910E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C5FC2A2357FD2E00910E7E /* Assets.xcassets */; };
 		40C5FC2E2357FD2E00910E7E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5FC2C2357FD2E00910E7E /* MainMenu.xib */; };
@@ -19,7 +22,10 @@
 
 /* Begin PBXFileReference section */
 		3D270DA75BAE059660B206D9 /* Pods_iJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4064782D236C6E8F0099C125 /* JSONRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRow.swift; sourceTree = "<group>"; };
 		40A547D523669F2900CE8A21 /* ModelValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelValue.swift; sourceTree = "<group>"; };
+		40A547E92367361D00CE8A21 /* FileGenerateController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileGenerateController.xib; sourceTree = "<group>"; };
+		40A547ED23674BC700CE8A21 /* FileGenerateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGenerateController.swift; sourceTree = "<group>"; };
 		40C5FC252357FD2D00910E7E /* iJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C5FC282357FD2D00910E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C5FC2A2357FD2E00910E7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +56,7 @@
 			children = (
 				40C5FC2C2357FD2E00910E7E /* MainMenu.xib */,
 				40C5FC372357FE0700910E7E /* MainController.xib */,
+				40A547E92367361D00CE8A21 /* FileGenerateController.xib */,
 				40C5FC2A2357FD2E00910E7E /* Assets.xcassets */,
 				40C5FC2F2357FD2E00910E7E /* Info.plist */,
 				40C5FC302357FD2E00910E7E /* iJSON.entitlements */,
@@ -70,6 +77,7 @@
 			children = (
 				40CAEDF9235A30FD00DF17D6 /* JSONModel.swift */,
 				40A547D523669F2900CE8A21 /* ModelValue.swift */,
+				4064782D236C6E8F0099C125 /* JSONRow.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -78,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				40C5FC362357FE0700910E7E /* MainController.swift */,
+				40A547ED23674BC700CE8A21 /* FileGenerateController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 			files = (
 				40C5FC2B2357FD2E00910E7E /* Assets.xcassets in Resources */,
 				40C5FC2E2357FD2E00910E7E /* MainMenu.xib in Resources */,
+				40A547EA2367361D00CE8A21 /* FileGenerateController.xib in Resources */,
 				40C5FC392357FE0700910E7E /* MainController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,8 +255,10 @@
 			files = (
 				40C5FC382357FE0700910E7E /* MainController.swift in Sources */,
 				40A547D623669F2900CE8A21 /* ModelValue.swift in Sources */,
+				4064782E236C6E8F0099C125 /* JSONRow.swift in Sources */,
 				40C5FC292357FD2D00910E7E /* AppDelegate.swift in Sources */,
 				40CAEDFA235A30FD00DF17D6 /* JSONModel.swift in Sources */,
+				40A547EE23674BC700CE8A21 /* FileGenerateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

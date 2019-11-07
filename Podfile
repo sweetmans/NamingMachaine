@@ -8,5 +8,6 @@ target 'iJSON' do
   # Pods for iJSON
   pod 'SwiftyJSON'
   pod 'FilesProvider'
+  pod 'EasyPeasy'
   
 end

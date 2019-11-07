@@ -8,10 +8,13 @@
 
 import Cocoa
 
+
+
 //MARK: - <====== Model Value ======>
 
 struct ModelValue {
     
+    //Value Type
     enum ValueType: String {
         case bool = "Bool"
         case string = "String"
@@ -23,20 +26,22 @@ struct ModelValue {
         case unknow = "Unknow"
     }
     
+    //Key of value
     var key: String
+    //Value of key
     var value: Any?
+    //Value type
     var type: ValueType
     
-    mutating func changeValue (newValue: Any) {
-        value = newValue
-    }
-    
+
+    //init
     init(key: String, value: Any?) {
         self.key = key
         self.value = value
         self.type = ModelValue.getTypeFrom(value: value)
     }
     
+    //get value from type
     static func getTypeFrom(value: Any?) -> ValueType {
         
         if value == nil {
@@ -67,6 +72,11 @@ struct ModelValue {
             return .unknow
         }
         
+    }
+    
+    //mutating value.
+    mutating func changeValue (newValue: Any) {
+        value = newValue
     }
     
 }
@@ -107,6 +117,3 @@ extension String {
     }
     
 }
-
-
-
