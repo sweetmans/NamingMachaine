@@ -31,6 +31,9 @@ A simple mac app to generator JSON text to swift model file.
 
 iJSON Generator dependency is using [CocoaPods](http://cocoapods.org). To build project you need run `pod install` first.
 
+### Mac App Store
+
+https://apps.apple.com/us/app/ijson-generator/id1486894478
 
 ### Use
 
