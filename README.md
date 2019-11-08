@@ -1,5 +1,5 @@
 <p align="center" >
-	<img src="https://github.com/sweetmans/SMInstagramPhotoPicker/blob/master/SMInstagramPhotoPicker/Assets/banner.png" title="SMInstagramPhotoPicker" float=left>
+	<img src="https://github.com/sweetmans/iJSON-Generator/blob/master/github/assets/0x0ss-P3.jpg" title="SMInstagramPhotoPicker" float=left>
 </p>
 
 ## iJSON Generator
