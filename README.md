@@ -1,3 +1,7 @@
+<p align="center" >
+	<img src="https://github.com/sweetmans/SMInstagramPhotoPicker/blob/master/SMInstagramPhotoPicker/Assets/banner.png" title="SMInstagramPhotoPicker" float=left>
+</p>
+
 ## iJSON Generator
 A simple mac app to generator JSON text to swift model file.
 
