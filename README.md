@@ -37,7 +37,7 @@ iJSON Generator dependency is using [CocoaPods](http://cocoapods.org). To build 
 
 ### Mac App Store
 
-https://apps.apple.com/us/app/ijson-generator/id1486894478
+https://apps.apple.com/cn/app/ijson-generator/id1486894478
 
 ### Use
 
