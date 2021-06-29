@@ -1,79 +1,47 @@
 //
-//  JSONModel.swift
-//  iJSON
-//
-//  Created by 苏威曼 on 2019/10/19.
-//  Copyright © 2019 S.M. Technology. All rights reserved.
+//  Copyright © 2021 S.M. Technology. All rights reserved.
 //
 
 import Cocoa
 
-
 //TODO: FIX value type is `Array` loop Implement issuse
-
-
-
 class JSONModel: NSObject {
-    
-    
     init(dictionary: Dictionary<String, Any>, name: String, key: String, level: Int) {
-        
         self.key = key
         self.name = name
         self.level = level
         
         for key in dictionary.keys {
-            
             var value: ModelValue = ModelValue(key: key, value: dictionary[key])
-            
             if (value.type == .dictionary) {
                 let model = JSONModel.init(dictionary: dictionary[key] as! Dictionary<String, Any>, name: "\(name.nameFromat)\(key.nameFromat)", key: key, level: level + 1)
                 value.changeValue(newValue: model)
             }
-            
             if (value.type == .array) {
-                
                 guard let ds = value.value as? [Any] else {return}
                 var models: [Any] = []
-                
                 for d in ds {
                     if let dict = d as? Dictionary<String, Any> {
-                        let model = JSONModel.init(dictionary: dict, name: "\(name.nameFromat)\(key.nameFromat)", key: key, level: level + 1)
+                        let model = JSONModel(dictionary: dict, name: "\(name.nameFromat)\(key.nameFromat)", key: key, level: level + 1)
                         models.append(model)
                     }else{
                         models.append(ModelValue(key: key, value: d))
                     }
                 }
-                
                 value.changeValue(newValue: models)
             }
-            
             values[key] = value
-            
         }
-        
     }
     
-    //File Name
     var fileName = "DefaultFileName"
-    
-    //name of object
     var name: String
-    //key of object
     var key: String
-    
-    //Level
     var level:Int = 0
-    
-    //values
     var values: [String: ModelValue] = [String: ModelValue]()
-    
 }
 
-//MARK: - <====== JSON MODEL STriNG TEXT<##> ======>
-
 extension JSONModel {
-    
     func createModelString() -> String {
         
         var text: String = ""
@@ -90,9 +58,7 @@ extension JSONModel {
     
     //copy right string
     private func creatCopyrightString() -> String {
-        
         return "//\n//  \(fileName)\n//  Replace with your project name. \n//\n//  Created by iJSON Model Generator on \(getTimeString()).\n//  Copyright © \(getYearString()) Replace with your organization name. All rights reserved.\n//\n\nimport Foundation\nimport SwiftyJSON\n\n\n"
-        
     }
     
     //get date
@@ -144,7 +110,6 @@ extension JSONModel {
     
     //create struct property
     private func createStructProperty(text: String) -> String {
-        
         var text: String = "//MARK - \(name)\nstruct \(name) {\n\n    //Propertys\n"
         for value in self.values {
             switch value.value.type {
@@ -174,14 +139,11 @@ extension JSONModel {
                 text.append("    var \(value.key): SpecifyTypeHere?\n")
             }
         }
-        
         return "\(text)\n"
-        
     }
     
     //Create Struct Implement - SwityJSON
     private func createStructImplementForSwityJSOnN(text: String) -> String {
-        
         var newText: String = text
         newText.append("    //Get the \(name) model instence\n    static func decode(json: JSON) -> \(name) {\n        var object = \(name)()\n")
         
