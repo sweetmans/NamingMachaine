@@ -4,7 +4,12 @@
 
 import Cocoa
 
-//TODO: FIX value type is `Array` loop Implement issuse
+enum DecoderType: Int {
+    case swiftDecoder = 0
+    case swiftyJSON = 1
+}
+
+//TODO: FIX value type is `Array` loop Implement issue
 class JSONModel: NSObject {
     init(dictionary: Dictionary<String, Any>, name: String, key: String, level: Int) {
         self.key = key
@@ -14,7 +19,7 @@ class JSONModel: NSObject {
         for key in dictionary.keys {
             var value: ModelValue = ModelValue(key: key, value: dictionary[key])
             if (value.type == .dictionary) {
-                let model = JSONModel.init(dictionary: dictionary[key] as! Dictionary<String, Any>, name: "\(name.nameFromat)\(key.nameFromat)", key: key, level: level + 1)
+                let model = JSONModel.init(dictionary: dictionary[key] as! Dictionary<String, Any>, name: "\(name)\(key.nameFromat)", key: key, level: level + 1)
                 value.changeValue(newValue: model)
             }
             if (value.type == .array) {
@@ -22,7 +27,8 @@ class JSONModel: NSObject {
                 var models: [Any] = []
                 for d in ds {
                     if let dict = d as? Dictionary<String, Any> {
-                        let model = JSONModel(dictionary: dict, name: "\(name.nameFromat)\(key.nameFromat)", key: key, level: level + 1)
+                        let childName = "\(name)\(key.nameFromat)"
+                        let model = JSONModel(dictionary: dict, name: childName, key: key, level: level + 1)
                         models.append(model)
                     }else{
                         models.append(ModelValue(key: key, value: d))
@@ -42,75 +48,62 @@ class JSONModel: NSObject {
 }
 
 extension JSONModel {
-    func createModelString() -> String {
-        
+    func createModelString(type: DecoderType) -> String {
         var text: String = ""
-        
-        //if level equel 0 mean is root objet, And Create file name using root object name.
         if (self.level == 0) {
             fileName = "\(name).swift"
-            text.append(creatCopyrightString())
+            text.append(creatCopyrightString(type: type))
         }
-        
-        //Create StructX
-        return "\(text)\(createStruct(text: text))"
+        return "\(text)\(createStruct(text: text, type: type))"
     }
     
     //copy right string
-    private func creatCopyrightString() -> String {
-        return "//\n//  \(fileName)\n//  Replace with your project name. \n//\n//  Created by iJSON Model Generator on \(getTimeString()).\n//  Copyright © \(getYearString()) Replace with your organization name. All rights reserved.\n//\n\nimport Foundation\nimport SwiftyJSON\n\n\n"
+    private func creatCopyrightString(type: DecoderType) -> String {
+        let importSwityJsonLibrary = type == .swiftyJSON ? "\nimport SwiftyJSON" : ""
+        return "//\n//  \(fileName)\n//\n//  Created by iJSON Swift model generator on \(getTimeString()).\n//  Copyright © \(getYearString()) #<S.M. Technology>#. All rights reserved.\n//\n\nimport Foundation\(importSwityJsonLibrary)\n\n"
     }
     
-    //get date
     private func getTimeString() -> String {
-        
         let formate: DateFormatter = DateFormatter()
         formate.timeZone = Calendar.current.timeZone
         formate.dateFormat = "yyyy/MM/dd"
-        
         return formate.string(from: Date())
     }
     
-    //get year string
     private func getYearString() -> String {
-        
         let formate: DateFormatter = DateFormatter()
         formate.timeZone = Calendar.current.timeZone
         formate.dateFormat = "yyyy"
-        
         return formate.string(from: Date())
     }
     
-    
-    //func create ctruct
-    private func createStruct(text: String) -> String {
-        
-        let newText = createStructProperty(text: text)
-        var impText = createStructImplementForSwityJSOnN(text: newText)
+    private func createStruct(text: String, type: DecoderType) -> String {
+        let newText = createStructProperty(text: text, type: type)
+        var impText: String = ""
+        if type == .swiftyJSON { impText = createStructImplementForSwityJSOnN(text: newText) }
+        if type == .swiftDecoder { impText = createStructImplementForSwitDecoder(text: newText) }
         
         for value in self.values {
             switch value.value.type {
             case .dictionary:
                 if let jm = value.value.value as? JSONModel {
-                    impText = "\(impText)\n\n\(jm.createStruct(text: impText))"
+                    impText = "\(impText)\n\n\(jm.createStruct(text: impText, type: type))"
                 }
             case .array:
                 if let jm = value.value.value as? [JSONModel] {
                     if jm.count > 0 {
-                        impText = "\(impText)\n\n\(jm[0].createStruct(text: impText))"
+                        impText = "\(impText)\n\n\(jm[0].createStruct(text: impText, type: type))"
                     }
                 }
             default:
                 print("No need to create struct")
             }
         }
-        
         return impText
     }
     
-    //create struct property
-    private func createStructProperty(text: String) -> String {
-        var text: String = "//MARK - \(name)\nstruct \(name) {\n\n    //Propertys\n"
+    private func createStructProperty(text: String, type: DecoderType) -> String {
+        var text: String = "struct \(name): Decodable {\n"
         for value in self.values {
             switch value.value.type {
             case .int, .double, .string, .bool:
@@ -120,14 +113,11 @@ extension JSONModel {
                     text.append("    var \(value.key): \(jm.name)?\n")
                 }
             case .array:
-                //content is dictionary
                 if let jm = value.value.value as? [JSONModel] {
                     if jm.count > 0 {
                         text.append("    var \(value.key): [\(jm[0].name)] = []\n")
                     }
                 }
-                
-                //content is none dictionary
                 if let jms = value.value.value as? [ModelValue] {
                     if jms.count > 0 {
                         text.append("    var \(value.key): [\(jms[0].type.rawValue)] = []\n")
@@ -142,7 +132,6 @@ extension JSONModel {
         return "\(text)\n"
     }
     
-    //Create Struct Implement - SwityJSON
     private func createStructImplementForSwityJSOnN(text: String) -> String {
         var newText: String = text
         newText.append("    //Get the \(name) model instence\n    static func decode(json: JSON) -> \(name) {\n        var object = \(name)()\n")
@@ -180,10 +169,52 @@ extension JSONModel {
             }
         }
         newText.append("        return object\n")
-        return "\(newText)    }\n}\n\n\n"
-        
+        return "\(newText)    }\n}\n\n"
     }
     
+    private func createStructImplementForSwitDecoder(text: String) -> String {
+        var newText: String = text
+        newText.append("    enum CodingKeys: String, CodingKey {\n")
+        for value in values {
+            newText.append("        case \(value.key)\n")
+        }
+        newText.append("    }\n\n")
+        newText.append("    init(from decoder: Decoder) throws {\n")
+        newText.append("        let container = try decoder.container(keyedBy: CodingKeys.self)\n")
+        for value in values {
+            switch value.value.type {
+            case .string:
+                newText.append("        \(value.value.key) = try container.decode(String.self, forKey: .\(value.value.key))\n")
+            case .int:
+                newText.append("        \(value.value.key) = try container.decode(Int.self, forKey: .\(value.value.key))\n")
+            case .bool:
+                newText.append("        \(value.value.key) = try container.decode(Bool.self, forKey: .\(value.value.key))\n")
+            case .double:
+                newText.append("        \(value.value.key) = try container.decode(Double.self, forKey: .\(value.value.key))\n")
+            case .dictionary:
+                if let jsonModel = value.value.value as? JSONModel {
+                    newText.append("        \(value.value.key) = try container.decode(\(jsonModel.name).self, forKey: .\(value.value.key))\n")
+                }
+            case .array:
+                if let jsonModelArray = value.value.value as? [JSONModel], jsonModelArray.count > 0 {
+                    newText.append("        \(value.value.key) = try container.decode([\(jsonModelArray[0].name)].self, forKey: .\(value.value.key))\n")
+                }
+                if let jms = value.value.value as? [ModelValue] {
+                    if jms.count > 0 {
+                        newText.append("        \(value.value.key) = try container.decode([\(jms[0].type.rawValue)].self, forKey: .\(value.value.key))\n")
+                    }else{
+                        newText.append("        \(value.value.key) = []\n")
+                    }
+                }
+            default:
+                newText.append("        \(value.value.key) = try container.decode(YOUHAVETOSPECIFYANAME.self, forKey: .\(value.value.key))\n")
+            }
+        }
+        newText.append("    }\n\n")
+        newText.append("    static func toOption(From data: Data) -> \(name)? {\n")
+        newText.append("        return try? JSONDecoder().decode(\(name).self, from: data)\n")
+        newText.append("    }\n")
+        newText.append("}")
+        return newText
+    }
 }
-
-

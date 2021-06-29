@@ -4,9 +4,6 @@
 
 import Cocoa
 
-
-
-//MARK: - <====== Model Value ======>
 struct ModelValue {
     enum ValueType: String {
         case bool = "Bool"

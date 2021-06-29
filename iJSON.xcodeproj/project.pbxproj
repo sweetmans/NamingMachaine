@@ -19,6 +19,7 @@
 		40C5FC392357FE0700910E7E /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5FC372357FE0700910E7E /* MainController.xib */; };
 		40CAEDFA235A30FD00DF17D6 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CAEDF9235A30FD00DF17D6 /* JSONModel.swift */; };
 		A12D4976268A8B400069514B /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D4975268A8B400069514B /* FlatButton.swift */; };
+		A12D4978268AD1830069514B /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D4977268AD1830069514B /* Songs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		40C5FC372357FE0700910E7E /* MainController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainController.xib; sourceTree = "<group>"; };
 		40CAEDF9235A30FD00DF17D6 /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
 		A12D4975268A8B400069514B /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
+		A12D4977268AD1830069514B /* Songs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Songs.swift; sourceTree = "<group>"; };
 		C2434BC515ABD14F395983BA /* Pods-iJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iJSON.debug.xcconfig"; path = "Target Support Files/Pods-iJSON/Pods-iJSON.debug.xcconfig"; sourceTree = "<group>"; };
 		CCBCB803B679968170165B62 /* Pods-iJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iJSON.release.xcconfig"; path = "Target Support Files/Pods-iJSON/Pods-iJSON.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				40A547D523669F2900CE8A21 /* ModelValue.swift */,
 				4064782D236C6E8F0099C125 /* JSONRow.swift */,
 				A12D4975268A8B400069514B /* FlatButton.swift */,
+				A12D4977268AD1830069514B /* Songs.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12D4978268AD1830069514B /* Songs.swift in Sources */,
 				40C5FC382357FE0700910E7E /* MainController.swift in Sources */,
 				40A547D623669F2900CE8A21 /* ModelValue.swift in Sources */,
 				4064782E236C6E8F0099C125 /* JSONRow.swift in Sources */,

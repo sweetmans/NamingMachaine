@@ -23,6 +23,7 @@ class MainController: NSViewController {
     @IBOutlet weak var lineTableView: NSTableView!
     @IBOutlet var textField: NSTextView!
     @IBOutlet weak var rootNameTextField: NSTextField!
+    @IBOutlet weak var decoderPopIpButtonCell: NSPopUpButtonCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,6 @@ class MainController: NSViewController {
         textField.font = NSFont(name: "Menlo", size: 12)
         textField.textColor = .systemYellow
         textField.delegate = self
-        
     }
     
     @IBAction func startButtonAction(_ sender: NSButton) {
@@ -67,7 +67,12 @@ class MainController: NSViewController {
     private func genarateFile(fileName: String) {
         guard let d = dicnaryObject else {return}
         let jsonModel = JSONModel(dictionary: d, name: fileName, key: fileName, level: 0)
-        let modelText = jsonModel.createModelString()
+        var modelText: String
+        if let tag = decoderPopIpButtonCell.selectedItem?.tag, let type = DecoderType(rawValue: tag) {
+            modelText = jsonModel.createModelString(type: type)
+        }else {
+            modelText = jsonModel.createModelString(type: .swiftDecoder)
+        }
         let createFilePath = "\(Measurements.downloadsPath)/\(jsonModel.fileName)"
         let done = FileManager.default.createFile(atPath: createFilePath, contents: modelText.data(using: .utf8), attributes: nil)
         if done {

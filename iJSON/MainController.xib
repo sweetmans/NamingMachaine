@@ -3,11 +3,13 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19115.3"/>
+        <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainController" customModule="iJSON" customModuleProvider="target">
             <connections>
+                <outlet property="decoderPopIpButtonCell" destination="Dyb-Cs-gjD" id="Vhd-0E-9vX"/>
                 <outlet property="lineClipView" destination="jTX-kH-aTe" id="zfN-DP-Azb"/>
                 <outlet property="lineTableView" destination="6cj-gZ-KyM" id="wZf-sg-2NN"/>
                 <outlet property="rootNameTextField" destination="c8I-Mr-GzJ" id="h1l-6t-cCI"/>
@@ -40,11 +42,11 @@
                             <rect key="frame" x="0.0" y="555" width="816" height="50"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-YC-ydm">
-                                    <rect key="frame" x="48" y="24" width="279" height="16"/>
+                                    <rect key="frame" x="48" y="21" width="237" height="19"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="16" id="ppu-Ar-oxz"/>
+                                        <constraint firstAttribute="height" constant="19" id="ppu-Ar-oxz"/>
                                     </constraints>
-                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="JSON TEXT FORMETTER  GENERATOR" id="cCR-PS-RPu">
+                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="JSON text formetter &amp; generator" id="cCR-PS-RPu">
                                         <font key="font" metaFont="systemSemibold" size="15"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -58,9 +60,9 @@
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-1024" id="ZHs-n5-RPP"/>
                                 </imageView>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6VJ-sr-6Fh">
-                                    <rect key="frame" x="48" y="8" width="321" height="16"/>
+                                    <rect key="frame" x="48" y="7" width="321" height="14"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="16" id="au2-hy-SeZ"/>
+                                        <constraint firstAttribute="height" constant="14" id="au2-hy-SeZ"/>
                                     </constraints>
                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Automatic create Swift Model for you from your JSON text" id="NcY-rz-e3L">
                                         <font key="font" metaFont="systemSemibold" size="11"/>
@@ -162,7 +164,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8QD-AR-7rc">
-                                    <rect key="frame" x="10" y="263" width="72" height="15"/>
+                                    <rect key="frame" x="10" y="267" width="72" height="15"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Framework" id="6WM-UQ-UAX">
                                         <font key="font" metaFont="systemBold" size="12"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -170,14 +172,14 @@
                                     </textFieldCell>
                                 </textField>
                                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dof-NC-Chm">
-                                    <rect key="frame" x="9" y="294" width="135" height="26"/>
+                                    <rect key="frame" x="7" y="296" width="138" height="33"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="4ww-sd-zth"/>
                                         <constraint firstAttribute="width" constant="128" id="xhF-cc-qzX"/>
                                     </constraints>
-                                    <popUpButtonCell key="cell" type="push" title="Swift" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="vQx-6s-USo" id="oyb-c0-KU1">
+                                    <popUpButtonCell key="cell" type="push" title="Swift" bezelStyle="rounded" alignment="left" controlSize="large" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="vQx-6s-USo" id="oyb-c0-KU1">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="menu"/>
+                                        <font key="font" metaFont="systemBold" size="12"/>
                                         <menu key="menu" id="skk-pq-diP">
                                             <items>
                                                 <menuItem title="Swift" state="on" id="vQx-6s-USo"/>
@@ -186,16 +188,19 @@
                                     </popUpButtonCell>
                                 </popUpButton>
                                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UHS-Uc-1mq">
-                                    <rect key="frame" x="9" y="231" width="135" height="25"/>
+                                    <rect key="frame" x="7" y="229" width="138" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="128" id="eWz-0W-qE8"/>
                                     </constraints>
-                                    <popUpButtonCell key="cell" type="push" title="SwiftyJSON" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="0IU-Gc-eoy" id="Dyb-Cs-gjD">
+                                    <popUpButtonCell key="cell" type="push" title="Swift Decoder" bezelStyle="rounded" alignment="left" controlSize="large" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="I4E-sb-54l" id="Dyb-Cs-gjD">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="menu"/>
+                                        <font key="font" metaFont="systemBold" size="12"/>
                                         <menu key="menu" id="UcT-y4-nTT">
                                             <items>
-                                                <menuItem title="SwiftyJSON" state="on" id="0IU-Gc-eoy"/>
+                                                <menuItem title="Swift Decoder" id="I4E-sb-54l">
+                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                </menuItem>
+                                                <menuItem title="SwiftyJSON" state="on" tag="1" id="0IU-Gc-eoy"/>
                                             </items>
                                         </menu>
                                     </popUpButtonCell>
@@ -230,7 +235,7 @@
                                             <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
-                                            <color key="value" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="value" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
                                             <color key="value" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
@@ -274,17 +279,17 @@
                                     </buttonCell>
                                 </button>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ndq-id-Erd">
-                                    <rect key="frame" x="10" y="164" width="108" height="15"/>
+                                    <rect key="frame" x="10" y="164" width="113" height="15"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Root Object Name" id="4Hj-hS-jMr">
-                                        <font key="font" metaFont="cellTitle"/>
+                                        <font key="font" metaFont="systemBold" size="12"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c8I-Mr-GzJ">
-                                    <rect key="frame" x="12" y="134" width="128" height="22"/>
+                                    <rect key="frame" x="12" y="128" width="236" height="32"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="22" id="UBE-sb-2eJ"/>
+                                        <constraint firstAttribute="height" constant="32" id="UBE-sb-2eJ"/>
                                     </constraints>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" placeholderString="eg. UserProfile" bezelStyle="round" id="YIx-Zy-yFK">
                                         <font key="font" metaFont="system"/>
@@ -297,7 +302,7 @@
                                 <constraint firstAttribute="bottom" secondItem="oR0-wb-n5e" secondAttribute="bottom" constant="48" id="0J2-hN-pdb"/>
                                 <constraint firstItem="dof-NC-Chm" firstAttribute="leading" secondItem="IyJ-7R-aDm" secondAttribute="leading" id="3Mh-zJ-QKf"/>
                                 <constraint firstItem="IyJ-7R-aDm" firstAttribute="top" secondItem="AUP-kW-g61" secondAttribute="bottom" constant="12" id="5tg-fT-Pyu"/>
-                                <constraint firstItem="dof-NC-Chm" firstAttribute="top" secondItem="IyJ-7R-aDm" secondAttribute="bottom" constant="8" id="6Th-hL-Ovh"/>
+                                <constraint firstItem="dof-NC-Chm" firstAttribute="top" secondItem="IyJ-7R-aDm" secondAttribute="bottom" constant="4" id="6Th-hL-Ovh"/>
                                 <constraint firstItem="AUP-kW-g61" firstAttribute="top" secondItem="hZd-JA-Chn" secondAttribute="top" constant="198" id="Amt-NJ-KFr"/>
                                 <constraint firstItem="8QD-AR-7rc" firstAttribute="top" secondItem="dof-NC-Chm" secondAttribute="bottom" constant="20" id="BYI-eo-CPK"/>
                                 <constraint firstItem="Ndq-id-Erd" firstAttribute="top" secondItem="RW0-jh-Sa1" secondAttribute="bottom" constant="20" id="CTq-zQ-MRW"/>
@@ -306,9 +311,10 @@
                                 <constraint firstItem="qSW-vV-quM" firstAttribute="top" secondItem="j8a-W3-Edk" secondAttribute="bottom" constant="12" id="FOe-Hu-g5O"/>
                                 <constraint firstItem="c8I-Mr-GzJ" firstAttribute="leading" secondItem="Ndq-id-Erd" secondAttribute="leading" id="FqB-sX-p2B"/>
                                 <constraint firstItem="oR0-wb-n5e" firstAttribute="centerX" secondItem="hZd-JA-Chn" secondAttribute="centerX" id="JOd-jt-yYx"/>
+                                <constraint firstAttribute="trailing" secondItem="c8I-Mr-GzJ" secondAttribute="trailing" constant="12" id="Kfr-k1-LH5"/>
                                 <constraint firstItem="AUP-kW-g61" firstAttribute="leading" secondItem="hZd-JA-Chn" secondAttribute="leading" id="Wr5-KP-Asy"/>
                                 <constraint firstItem="RW0-jh-Sa1" firstAttribute="leading" secondItem="IyJ-7R-aDm" secondAttribute="leading" id="XsL-ES-q2R"/>
-                                <constraint firstItem="c8I-Mr-GzJ" firstAttribute="top" secondItem="Ndq-id-Erd" secondAttribute="bottom" constant="8" id="YxJ-Wn-jiV"/>
+                                <constraint firstItem="c8I-Mr-GzJ" firstAttribute="top" secondItem="Ndq-id-Erd" secondAttribute="bottom" constant="4" id="YxJ-Wn-jiV"/>
                                 <constraint firstItem="j8a-W3-Edk" firstAttribute="leading" secondItem="hZd-JA-Chn" secondAttribute="leading" constant="12" id="aPM-5g-Xbp"/>
                                 <constraint firstItem="j8a-W3-Edk" firstAttribute="top" secondItem="hZd-JA-Chn" secondAttribute="top" constant="12" id="edT-ob-n2Y"/>
                                 <constraint firstAttribute="trailing" secondItem="qSW-vV-quM" secondAttribute="trailing" constant="12" id="gy1-ip-QO0"/>
@@ -318,8 +324,7 @@
                                 <constraint firstItem="qSW-vV-quM" firstAttribute="leading" secondItem="hZd-JA-Chn" secondAttribute="leading" constant="12" id="mUf-eQ-Oqd"/>
                                 <constraint firstItem="8QD-AR-7rc" firstAttribute="leading" secondItem="IyJ-7R-aDm" secondAttribute="leading" id="nLr-wb-FNF"/>
                                 <constraint firstItem="IyJ-7R-aDm" firstAttribute="leading" secondItem="hZd-JA-Chn" secondAttribute="leading" constant="12" id="oYf-kZ-O6w"/>
-                                <constraint firstItem="c8I-Mr-GzJ" firstAttribute="width" secondItem="UHS-Uc-1mq" secondAttribute="width" id="vJu-jg-3ci"/>
-                                <constraint firstItem="UHS-Uc-1mq" firstAttribute="top" secondItem="8QD-AR-7rc" secondAttribute="bottom" constant="8" id="zkx-wT-3O9"/>
+                                <constraint firstItem="UHS-Uc-1mq" firstAttribute="top" secondItem="8QD-AR-7rc" secondAttribute="bottom" constant="4" id="zkx-wT-3O9"/>
                             </constraints>
                         </customView>
                     </subviews>
@@ -350,8 +355,22 @@
                 <constraint firstAttribute="trailing" secondItem="uBE-ce-dnY" secondAttribute="trailing" id="KNA-o1-9MS"/>
                 <constraint firstItem="uBE-ce-dnY" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="oUU-tl-9g8"/>
             </constraints>
-            <point key="canvasLocation" x="159" y="130"/>
+            <point key="canvasLocation" x="73" y="67"/>
         </customView>
+        <popUpButtonCell type="bevel" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="bezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="YRD-Zo-dDU" id="Tcj-Ql-Jui">
+            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+            <font key="font" metaFont="smallSystem"/>
+            <menu key="menu" id="7YM-3I-T8a">
+                <items>
+                    <menuItem title="Item 1" state="on" id="YRD-Zo-dDU"/>
+                    <menuItem title="Item 2" id="vDy-Xk-gfu"/>
+                    <menuItem title="Item 3" id="fSe-3b-i2m"/>
+                </items>
+            </menu>
+        </popUpButtonCell>
+        <menuItem title="Item" id="Bu4-t5-A3C">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
     </objects>
     <resources>
         <image name="buttonCell:GDb-ov-uEu:image" width="1" height="1">

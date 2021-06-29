@@ -10,7 +10,6 @@ struct JSONRow {
     var value: String
     var key: String
     
-    //get each rows from a dictionary
     static func getRowsFrom(dictionary: Dictionary<String, Any>, rootLevel: Int, rootKey: String) -> [JSONRow] {
         let subLevel = rootLevel + 1
         var rows: [JSONRow] = []
@@ -88,7 +87,7 @@ extension JSONRow {
     static var intColor: NSColor { return .systemPurple }
     static var boolColor: NSColor { return .systemPink }
     static var nilColor: NSColor { return .systemPink }
-    static var defaultColor: NSColor { return .labelColor }
+    static var defaultColor: NSColor { return .systemPurple }
     static var keyColor: NSColor { return .systemGreen }
     static var arrayColor: NSColor { return .systemOrange}
 }
