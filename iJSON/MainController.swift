@@ -11,7 +11,7 @@ import EasyPeasy
 class MainController: NSViewController {
     struct Measurements {
         static var downloadsPath: String { return  "/Users/\(NSUserName())/Downloads" }
-        static let tableViewRowHeight: CGFloat = 14.0
+        static let tableViewRowHeight: CGFloat = 20.0
     }
     
     var model: JSONModel?
@@ -100,18 +100,20 @@ extension MainController: NSTableViewDataSource, NSTableViewDelegate {
             let keyLabel: NSTextField = NSTextField()
             let keyValue: String = rows[row].key == "" ? "" : "\"\(rows[row].key)\" :"
             keyLabel.stringValue =  keyValue
-            keyLabel.font = NSFont.systemFont(ofSize: 12, weight: .bold)
+            keyLabel.backgroundColor = NSColor.clear
+            keyLabel.font = rows[row].font
             keyLabel.isBordered = false
-            keyLabel.textColor = JSONRow.keyColor
+            keyLabel.textColor = JSONRow.Measurements.keyColor
             keyLabel.alignment = .left
             let caculateString: NSString = NSString(string: keyValue)
-            let width = caculateString.boundingRect(with: NSSize(width: 300, height: Measurements.tableViewRowHeight), options: NSString.DrawingOptions.usesFontLeading, attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 12, weight: .bold)]).width + 5
+            let width = caculateString.boundingRect(with: NSSize(width: 300, height: Measurements.tableViewRowHeight), options: NSString.DrawingOptions.usesFontLeading, attributes: [NSAttributedString.Key.font: rows[row].font]).width + 5
             view.addSubview(keyLabel)
             let keyLabelLeading: CGFloat = CGFloat(rows[row].level) * leadingMargin
-            keyLabel <- [Width(width), Leading(keyLabelLeading), Height(14), Top(0)]
+            keyLabel <- [Width(width), Leading(keyLabelLeading), Height(Measurements.tableViewRowHeight), Top(0)]
                             let valueLabel: NSTextField = NSTextField()
+                            valueLabel.backgroundColor = NSColor.clear
                             valueLabel.stringValue =  "\(rows[row].value)"
-                            valueLabel.font = NSFont.systemFont(ofSize: 12, weight: .bold)
+                            valueLabel.font = rows[row].font
                             valueLabel.isBordered = false
                             valueLabel.textColor = rows[row].color
                             valueLabel.alignment = .left
@@ -123,10 +125,10 @@ extension MainController: NSTableViewDataSource, NSTableViewDelegate {
             let view: NSView = NSView(frame: NSRect(x: 0, y: 0, width: tableColumn?.width ?? 0, height: Measurements.tableViewRowHeight))
             let label: NSTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: tableColumn?.width ?? 0, height: Measurements.tableViewRowHeight))
             label.stringValue = "\(row + 1)"
-            label.font = NSFont.systemFont(ofSize: 12, weight: .bold)
+            label.font = rows[row].font
             label.isBordered = false
             label.backgroundColor = NSColor.clear
-            label.alignment = .center
+            label.alignment = .left
             view.addSubview(label)
             return view
         }
@@ -152,20 +154,40 @@ extension MainController: NSTextViewDelegate {
         guard let data: Data = text.data(using: .utf8) else {return}
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-            if let d = jsonObject as? Dictionary<String, Any> {
-                let fileName = self.rootNameTextField.stringValue == "" ? "ROOT" : self.rootNameTextField.stringValue
-                model = JSONModel(dictionary: d, name: fileName, key: fileName, level: 0)
-                dicnaryObject = d
-                iSSourceJsonTextVaild = true
-                textField.textColor = .systemGreen
-                rows = JSONRow.getRowsFrom(dictionary: d, rootLevel: 0, rootKey: "")
-            }else{
+            rows = JSONRow.getAllRows(From: jsonObject)
+            if  let object = jsonObject as? Dictionary<String, Any> {
+                handleDictionaryObject(From: object)
+            } else if let array = jsonObject as? [Any] {
+                handleArrayObject(From: array)
+            } else {
                 textField.textColor = .systemRed
                 showJsonIsNotDcitionaryError()
             }
-        }catch let e {
+        } catch let e {
             textField.textColor = .systemRed
             showWrongJsonTextError(error: e)
+        }
+    }
+    
+    private func handleDictionaryObject(From dictionary: Dictionary<String, Any>) {
+        let fileName = self.rootNameTextField.stringValue == "" ? "ROOT" : self.rootNameTextField.stringValue
+        model = JSONModel(dictionary: dictionary, name: fileName, key: fileName, level: 0)
+        dicnaryObject = dictionary
+        iSSourceJsonTextVaild = true
+        textField.textColor = .systemGreen
+    }
+    
+    private func handleArrayObject(From object: [Any]) {
+        if let firstObject = object.first {
+            if  let object = firstObject as? Dictionary<String, Any> {
+                handleDictionaryObject(From: object)
+            }
+            if let array = firstObject as? [Any] {
+                handleArrayObject(From: array)
+            }
+        } else {
+            textField.textColor = .systemRed
+            showArrayEmptyError()
         }
     }
 }
@@ -206,6 +228,14 @@ extension MainController {
         let alert = NSAlert()
         alert.messageText = "Input your root object name"
         alert.informativeText = "A root object name is request for genarator naming system."
+        alert.icon = NSImage(named: "Error")
+        alert.runModal()
+    }
+    
+    fileprivate func showArrayEmptyError() {
+        let alert = NSAlert()
+        alert.messageText = "You are entering empty Array!"
+        alert.informativeText = "A object as an <Array> must not empty."
         alert.icon = NSImage(named: "Error")
         alert.runModal()
     }
