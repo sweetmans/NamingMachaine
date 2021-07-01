@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19115.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +16,9 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="it0-qa-iiD">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <rect key="contentRect" x="213" y="233" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1152"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1440"/>
+            <value key="minSize" type="size" width="480" height="270"/>
+            <value key="maxSize" type="size" width="480" height="270"/>
             <view key="contentView" id="wYM-T3-6O2">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -29,17 +31,6 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJY-l4-Xy2">
-                        <rect key="frame" x="98" y="44" width="156" height="33"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="156" id="XOp-0X-Jo1"/>
-                            <constraint firstAttribute="height" constant="32" id="YYM-VY-f3r"/>
-                        </constraints>
-                        <buttonCell key="cell" type="inline" title="Generate" bezelStyle="inline" alignment="center" state="on" borderStyle="border" inset="2" id="BvT-he-Uij">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="smallSystemBold"/>
-                        </buttonCell>
-                    </button>
                     <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ofR-0D-l5Y">
                         <rect key="frame" x="8" y="153" width="464" height="28"/>
                         <constraints>
@@ -51,15 +42,27 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qJY-l4-Xy2" customClass="FlatButton" customModule="iJSON" customModuleProvider="target">
+                        <rect key="frame" x="125" y="50" width="230" height="52"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="52" id="XQo-EP-EXt"/>
+                            <constraint firstAttribute="width" constant="230" id="qLZ-h0-q1V"/>
+                        </constraints>
+                        <buttonCell key="cell" type="inline" title="Generate" bezelStyle="inline" alignment="center" state="on" borderStyle="border" inset="2" id="BvT-he-Uij">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystemBold"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="qJY-l4-Xy2" firstAttribute="centerX" secondItem="wYM-T3-6O2" secondAttribute="centerX" constant="-64" id="OPX-Ub-vPV"/>
+                    <constraint firstAttribute="bottom" secondItem="qJY-l4-Xy2" secondAttribute="bottom" constant="50" id="64P-bg-mk4"/>
+                    <constraint firstItem="qJY-l4-Xy2" firstAttribute="centerX" secondItem="wYM-T3-6O2" secondAttribute="centerX" id="Fhh-hb-Qhv"/>
                     <constraint firstItem="c0L-Tc-Tqn" firstAttribute="leading" secondItem="wYM-T3-6O2" secondAttribute="leading" constant="20" id="PoY-kE-xAL"/>
                     <constraint firstItem="c0L-Tc-Tqn" firstAttribute="top" secondItem="wYM-T3-6O2" secondAttribute="top" constant="20" id="eA7-Xm-Ftk"/>
                     <constraint firstItem="ofR-0D-l5Y" firstAttribute="centerX" secondItem="wYM-T3-6O2" secondAttribute="centerX" constant="8" id="hdM-mr-o7G"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="-91" y="86"/>
+            <point key="canvasLocation" x="-155" y="51"/>
         </window>
     </objects>
 </document>

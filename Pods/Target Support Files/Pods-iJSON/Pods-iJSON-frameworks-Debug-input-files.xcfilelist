@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-iJSON/Pods-iJSON-frameworks.sh
+${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework
+${BUILT_PRODUCTS_DIR}/FilesProvider/FilesProvider.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

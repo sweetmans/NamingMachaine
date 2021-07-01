@@ -1,0 +1,24 @@
+PODS:
+  - EasyPeasy (1.10.0)
+  - FilesProvider (0.26.0)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - EasyPeasy
+  - FilesProvider
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - EasyPeasy
+    - FilesProvider
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  EasyPeasy: b9b1bae024d21a7dfa9bad26d6826d88348cc6f1
+  FilesProvider: 2a8ae17d8b9c23a6feadb1308ee638fa31d21065
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: 0ad958fc727aef45a4bad148bc6068bad1c0dda5
+
+COCOAPODS: 1.10.1
