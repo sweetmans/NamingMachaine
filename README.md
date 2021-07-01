@@ -1,25 +1,32 @@
 <p align="center" >
-	<img src="https://github.com/sweetmans/iJSON-Generator/blob/master/github/assets/0x0ss-P3.jpg" title="SMInstagramPhotoPicker" float=left>
+	<img src="https://github.com/sweetmans/iJSON-Generator/blob/develop/github/assets/0x0ss-P3.jpg" title="SMInstagramPhotoPicker" float=left>
 </p>
 
-## iJSON Generator
+## iJSON Swift model generator
 A simple mac app to generator JSON text to swift model file.
+Generate JSON model file for you with selected language and framework support. 
+
+As an Apple developer. You need more time to think about your app. So, you don't have time to naming you object. iJson will quickly generate file and naming every object for you.
+
+Written using swift
+So easy to use. Generate the model file and drag the file to your Xcode project. And done!
+Support Swift 5 and above
+Support SwityJSON Framework
+Support native JSONDecoder
+It just work!
+
+Now you could using Swift default JSONDecoder to generator you model file.Now we are displaying all row from you json text instead display only first object.
 
 [![License](https://img.shields.io/cocoapods/l/SMInstagramPhotoPicker.svg?style=flat)](http://cocoapods.org/pods/SMInstagramPhotoPicker)
 
+### If you want to support me. Buy from Mac AppStore just $0.99 [Mac AppStore](https://apps.apple.com/us/app/ijson-model-generator/id1486894478)
+### Downloads [macOS v1.0.0](https://github.com/sweetmans/iJSON-Generator/files/6749306/iJSON-app.zip)
 
-## Features
-
-- [x] Writen by swuft
-- [x] So easy to use.
-- [x] Support Swift 4 and above
-- [x] Support SwityJSON Framework
-
-## todo
-
-- [x] IMP Left side table view to show JSON struct with json formate.
-- [x] Support original JSONDecoder
-- [x] Support YYKit for Objective-C
+### What's new on v1.0.0
+- [x] Support root object was an array.
+- [x] Now you could using Swift default JSONDecoder to generator you model file.
+- [x] You could use dark mode now.
+- [x] Now we are displaying all row from you json text instead display only first object. 
 
 ### If you want join & contribute code, just implement and send pull-request. Thanks for help.
 
@@ -37,11 +44,7 @@ iJSON Generator dependency is using [CocoaPods](http://cocoapods.org). To build 
 
 ### Mac App Store
 
-https://apps.apple.com/cn/app/ijson-generator/id1486894478
-
-### Use
-
-update later.
+https://apps.apple.com/us/app/ijson-generator/id1486894478
 
 ## Licenses
 
