@@ -26,8 +26,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate: NSWindowDelegate {
     func windowWillResize(_ sender: NSWindow, to frameSize: NSSize) -> NSSize {
         var newSize: NSSize = frameSize
-        if (frameSize.width < 800) { newSize.width = 800 }
-        if (frameSize.height < 600) { newSize.height = 600 }
+        if (frameSize.width < 1000) { newSize.width = 1000 }
+        if (frameSize.height < 800) { newSize.height = 720 }
         self.rootViewController.view.frame = NSRect(origin: NSPoint(x: 0, y: -20), size: newSize)
         return newSize
     }

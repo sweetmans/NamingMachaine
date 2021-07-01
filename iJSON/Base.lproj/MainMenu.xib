@@ -684,14 +684,14 @@
         <window title="iJSON" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="402" y="278" width="1000" height="600"/>
+            <rect key="contentRect" x="402" y="278" width="1000" height="720"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1440"/>
-            <value key="minSize" type="size" width="1000" height="600"/>
+            <value key="minSize" type="size" width="1000" height="720"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
+                <rect key="frame" x="0.0" y="0.0" width="1000" height="720"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
-            <point key="canvasLocation" x="139" y="-120"/>
+            <point key="canvasLocation" x="123" y="-168"/>
         </window>
     </objects>
 </document>
