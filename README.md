@@ -1,5 +1,6 @@
 <p align="center" >
-	<img src="https://github.com/sweetmans/iJSON-Generator/blob/develop/github/assets/0x0ss-P3.jpg" title="SMInstagramPhotoPicker" float=left>
+	<img src="https://github.com/sweetmans/iJSON-Generator/blob/develop/github/assets/appstore-preview-3.png" title="SMInstagramPhotoPicker" float=left>
+	<img src="https://github.com/sweetmans/iJSON-Generator/blob/develop/github/assets/appstore-preview.png" title="SMInstagramPhotoPicker" float=left>
 </p>
 
 ## iJSON Swift model generator
