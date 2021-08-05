@@ -47,7 +47,8 @@ struct JSONRow {
         } else {
             rows.append(JSONRow(color: Measurements.defaultColor, level: rootLevel, value: "{", key: rootKey, font: Measurements.heavyFont))
         }
-        for object in dictionary {
+        let sortedDictionary = dictionary.sorted { $0.key.lowercased() < $1.key.lowercased() }
+        for object in sortedDictionary {
             let value = ModelValue(key: object.key, value: object.value)
             switch value.type {
             case .string:

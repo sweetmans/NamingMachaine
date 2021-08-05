@@ -9,8 +9,8 @@ import EasyPeasy
 
 //TODO: - Display Formating JSON text to the table view with lines
 class MainController: NSViewController {
+    var downloadsPath: String = ""
     struct Measurements {
-        static var downloadsPath: String { return  "/Users/\(NSUserName())/Downloads" }
         static let tableViewRowHeight: CGFloat = 20.0
     }
     
@@ -21,12 +21,14 @@ class MainController: NSViewController {
     
     @IBOutlet weak var lineClipView: NSClipView!
     @IBOutlet weak var lineTableView: NSTableView!
-    @IBOutlet var textField: NSTextView!
+    @IBOutlet var textField: PasteTextView!
     @IBOutlet weak var rootNameTextField: NSTextField!
     @IBOutlet weak var decoderPopIpButtonCell: NSPopUpButtonCell!
     
+    @IBOutlet weak var storeFolderLabel: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        downloadsPath = "/Users/\(NSUserName())/Downloads"
         prepareForTableView()
         prepareForTextField()
     }
@@ -41,6 +43,8 @@ class MainController: NSViewController {
         textField.font = NSFont(name: "Menlo", size: 12)
         textField.textColor = .systemYellow
         textField.delegate = self
+        textField.pasteDelegate = self
+        storeFolderLabel.stringValue = downloadsPath.dropFirst().replacingOccurrences(of: "/", with: " > ")
     }
     
     @IBAction func startButtonAction(_ sender: NSButton) {
@@ -73,12 +77,31 @@ class MainController: NSViewController {
         }else {
             modelText = jsonModel.createModelString(type: .swiftDecoder)
         }
-        let createFilePath = "\(Measurements.downloadsPath)/\(jsonModel.fileName)"
+        let createFilePath = "\(downloadsPath)/\(jsonModel.fileName)"
         let done = FileManager.default.createFile(atPath: createFilePath, contents: modelText.data(using: .utf8), attributes: nil)
         if done {
             NSWorkspace.shared.open(URL(fileURLWithPath: createFilePath))
+            NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: downloadsPath)
         }else{
             showGenarateFileError()
+        }
+    }
+    
+    @IBAction func chooseFolder(_ sender: FlatButton) {
+        let dialog = NSOpenPanel()
+        dialog.title = "Choose folder to store your swift model file."
+        dialog.showsResizeIndicator = true
+        dialog.showsHiddenFiles = false
+        dialog.canChooseFiles = false
+        dialog.canChooseDirectories = true
+        if (dialog.runModal() ==  NSApplication.ModalResponse.OK) {
+            guard let result = dialog.url?.path else { return }
+            downloadsPath = result
+            let path = result.dropFirst().replacingOccurrences(of: "/", with: " > ")
+            storeFolderLabel.stringValue = path
+            print(result)
+        } else {
+
         }
     }
 }
@@ -238,5 +261,13 @@ extension MainController {
         alert.informativeText = "A object as an <Array> must not empty."
         alert.icon = NSImage(named: "Error")
         alert.runModal()
+    }
+}
+
+extension MainController: PasteTextViewDelegate {
+    func didPasteText(text: String) {
+        let trimmed = text.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: " ", with: "")
+        textField.string = trimmed
+        textDidEnter()
     }
 }
