@@ -1,6 +1,6 @@
 platform :macos, '10.12'
 
-target 'iJSON' do
+target 'NamingMachaine' do
   use_frameworks!
   pod 'SwiftyJSON'
   pod 'FilesProvider'

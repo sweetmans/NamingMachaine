@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19115.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="FileGenerateController" customModule="iJSON" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="FileGenerateController" customModule="NamingMachaine" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="it0-qa-iiD" id="7Pc-NU-SnQ"/>
             </connections>
@@ -16,7 +16,7 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="it0-qa-iiD">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <rect key="contentRect" x="213" y="233" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1440"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <value key="minSize" type="size" width="480" height="270"/>
             <value key="maxSize" type="size" width="480" height="270"/>
             <view key="contentView" id="wYM-T3-6O2">
@@ -42,7 +42,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qJY-l4-Xy2" customClass="FlatButton" customModule="iJSON" customModuleProvider="target">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qJY-l4-Xy2" customClass="FlatButton" customModule="NamingMachaine" customModuleProvider="target">
                         <rect key="frame" x="125" y="50" width="230" height="52"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="52" id="XQo-EP-EXt"/>

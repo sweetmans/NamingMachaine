@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainController" customModule="iJSON" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainController" customModule="NamingMachaine" customModuleProvider="target">
             <connections>
                 <outlet property="decoderPopIpButtonCell" destination="Dyb-Cs-gjD" id="Vhd-0E-9vX"/>
                 <outlet property="lineClipView" destination="jTX-kH-aTe" id="zfN-DP-Azb"/>
@@ -44,11 +44,11 @@
                             <rect key="frame" x="0.0" y="670" width="1200" height="50"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-YC-ydm">
-                                    <rect key="frame" x="48" y="21" width="237" height="19"/>
+                                    <rect key="frame" x="48" y="21" width="373" height="19"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="19" id="ppu-Ar-oxz"/>
                                     </constraints>
-                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="JSON text formetter &amp; generator" id="cCR-PS-RPu">
+                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Naming Machaine: JSON text formetter &amp; generator" id="cCR-PS-RPu">
                                         <font key="font" metaFont="systemSemibold" size="15"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -207,7 +207,7 @@
                                         </menu>
                                     </popUpButtonCell>
                                 </popUpButton>
-                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oR0-wb-n5e" customClass="FlatButton" customModule="iJSON" customModuleProvider="target">
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oR0-wb-n5e" customClass="FlatButton" customModule="NamingMachaine" customModuleProvider="target">
                                     <rect key="frame" x="12" y="100" width="236" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="GQi-MB-FeZ"/>
@@ -252,7 +252,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="236" height="146"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" selectionGranularity="word" smartInsertDelete="YES" id="C9U-Ez-BiX" customClass="PasteTextView" customModule="iJSON" customModuleProvider="target">
+                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" selectionGranularity="word" smartInsertDelete="YES" id="C9U-Ez-BiX" customClass="PasteTextView" customModule="NamingMachaine" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="236" height="146"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -350,7 +350,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C8m-rX-IHc">
-                                    <rect key="frame" x="159" y="21" width="30.5" height="38"/>
+                                    <rect key="frame" x="159" y="20.5" width="30.5" height="39"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="OUZ-QE-Wy4"/>
                                         <constraint firstAttribute="height" constant="30" id="bgc-R5-ddk"/>
@@ -368,7 +368,7 @@
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jFT-qQ-6aI" customClass="FlatButton" customModule="iJSON" customModuleProvider="target">
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jFT-qQ-6aI" customClass="FlatButton" customModule="NamingMachaine" customModuleProvider="target">
                                     <rect key="frame" x="810" y="25" width="100" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="E9Y-do-ZTZ"/>
@@ -996,7 +996,7 @@ HDwcPhxAHEIcSRxLHE0pwynIKdcp2ynmKe4p+yoIKh0qIiomKigqKiosKjUqOipAKkgqSipMKk4qUDvw
 O/U8AjwFPBI8FzwfPCI8JzwvAAAAAAAAAgEAAAAAAAAAaAAAAAAAAAAAAAAAAAAAPDI
 </mutableData>
         </image>
-        <image name="folder.fill" catalog="system" width="22" height="17"/>
+        <image name="folder.fill" catalog="system" width="23" height="18"/>
         <image name="icon-1024" width="512" height="512"/>
     </resources>
 </document>
