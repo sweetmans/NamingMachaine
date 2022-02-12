@@ -20,25 +20,8 @@
 		539BF4A483566E9C572A6770 /* Pods_NamingMachaine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BBB28B8DEF2FD3AA6557D4 /* Pods_NamingMachaine.framework */; };
 		A12D4976268A8B400069514B /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D4975268A8B400069514B /* FlatButton.swift */; };
 		A12D4978268AD1830069514B /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D4977268AD1830069514B /* Songs.swift */; };
-		A162AD2726FA3F2600C53EB5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A162AD2626FA3F2600C53EB5 /* Cocoa.framework */; };
-		A162AD2C26FA3F2600C53EB5 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A162AD2B26FA3F2600C53EB5 /* SourceEditorExtension.swift */; };
-		A162AD2E26FA3F2600C53EB5 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A162AD2D26FA3F2600C53EB5 /* SourceEditorCommand.swift */; };
-		A162AD3326FA3F2600C53EB5 /* Naming Machaine.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A162AD2526FA3F2600C53EB5 /* Naming Machaine.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A18820FB26B5DCAF007AF13A /* PasteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18820FA26B5DCAF007AF13A /* PasteTextView.swift */; };
-		A1AABAD1271B04DA00B37E3C /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A162AD2826FA3F2600C53EB5 /* XcodeKit.framework */; };
-		A1AABAD2271B04DA00B37E3C /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A162AD2826FA3F2600C53EB5 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A1F64B30272A018100075B27 /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F64B2F272A018100075B27 /* Home.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A162AD3126FA3F2600C53EB5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40C5FC1D2357FD2D00910E7E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A162AD2426FA3F2600C53EB5;
-			remoteInfo = JTM;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A162AD3426FA3F2600C53EB5 /* Embed App Extensions */ = {
@@ -47,20 +30,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A162AD3326FA3F2600C53EB5 /* Naming Machaine.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1AABAD3271B04DA00B37E3C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A1AABAD2271B04DA00B37E3C /* XcodeKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -83,19 +54,11 @@
 		6F6E22345984C416C2062AFC /* Pods-NamingMachaine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NamingMachaine.release.xcconfig"; path = "Target Support Files/Pods-NamingMachaine/Pods-NamingMachaine.release.xcconfig"; sourceTree = "<group>"; };
 		A12D4975268A8B400069514B /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
 		A12D4977268AD1830069514B /* Songs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Songs.swift; sourceTree = "<group>"; };
-		A161FC0E2733499A00A36FD7 /* ExtensionApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ExtensionApp.xcconfig; sourceTree = "<group>"; };
-		A162AD2526FA3F2600C53EB5 /* Naming Machaine.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Naming Machaine.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A162AD2626FA3F2600C53EB5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A162AD2826FA3F2600C53EB5 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
-		A162AD2B26FA3F2600C53EB5 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
-		A162AD2D26FA3F2600C53EB5 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
-		A162AD2F26FA3F2600C53EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A162AD3026FA3F2600C53EB5 /* JTM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JTM.entitlements; sourceTree = "<group>"; };
 		A18820FA26B5DCAF007AF13A /* PasteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteTextView.swift; sourceTree = "<group>"; };
 		A1A41BA827335D7300A60377 /* App.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = App.release.xcconfig; sourceTree = "<group>"; };
 		A1AD311127373908001E40FD /* App.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = App.debug.xcconfig; sourceTree = "<group>"; };
-		A1AD311227373A67001E40FD /* Editor.extension.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Editor.extension.release.xcconfig; sourceTree = "<group>"; };
-		A1F64B2F272A018100075B27 /* Home.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Home.xib; sourceTree = "<group>"; };
 		A4BBB28B8DEF2FD3AA6557D4 /* Pods_NamingMachaine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NamingMachaine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,15 +68,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				539BF4A483566E9C572A6770 /* Pods_NamingMachaine.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A162AD2226FA3F2600C53EB5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A162AD2726FA3F2600C53EB5 /* Cocoa.framework in Frameworks */,
-				A1AABAD1271B04DA00B37E3C /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				40C5FC272357FD2D00910E7E /* NamingMachaine */,
-				A162AD2A26FA3F2600C53EB5 /* JTM */,
 				40C5FC262357FD2D00910E7E /* Products */,
 				F0E068DDAFAAD62B8429852C /* Pods */,
 				FA84FD15A91AACD14A5389D7 /* Frameworks */,
@@ -178,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				40C5FC252357FD2D00910E7E /* NamingMachaine.app */,
-				A162AD2526FA3F2600C53EB5 /* Naming Machaine.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,20 +146,6 @@
 				40A547DB2366AE0C00CE8A21 /* Assets */,
 			);
 			path = NamingMachaine;
-			sourceTree = "<group>";
-		};
-		A162AD2A26FA3F2600C53EB5 /* JTM */ = {
-			isa = PBXGroup;
-			children = (
-				A162AD2B26FA3F2600C53EB5 /* SourceEditorExtension.swift */,
-				A162AD2D26FA3F2600C53EB5 /* SourceEditorCommand.swift */,
-				A1F64B2F272A018100075B27 /* Home.xib */,
-				A162AD2F26FA3F2600C53EB5 /* Info.plist */,
-				A162AD3026FA3F2600C53EB5 /* JTM.entitlements */,
-				A161FC0E2733499A00A36FD7 /* ExtensionApp.xcconfig */,
-				A1AD311227373A67001E40FD /* Editor.extension.release.xcconfig */,
-			);
-			path = JTM;
 			sourceTree = "<group>";
 		};
 		F0E068DDAFAAD62B8429852C /* Pods */ = {
@@ -246,30 +184,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				A162AD3226FA3F2600C53EB5 /* PBXTargetDependency */,
 			);
 			name = NamingMachaine;
 			productName = iJSON;
 			productReference = 40C5FC252357FD2D00910E7E /* NamingMachaine.app */;
 			productType = "com.apple.product-type.application";
-		};
-		A162AD2426FA3F2600C53EB5 /* JTM */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A162AD3726FA3F2600C53EB5 /* Build configuration list for PBXNativeTarget "JTM" */;
-			buildPhases = (
-				A162AD2126FA3F2600C53EB5 /* Sources */,
-				A162AD2226FA3F2600C53EB5 /* Frameworks */,
-				A162AD2326FA3F2600C53EB5 /* Resources */,
-				A1AABAD3271B04DA00B37E3C /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = JTM;
-			productName = JTM;
-			productReference = A162AD2526FA3F2600C53EB5 /* Naming Machaine.appex */;
-			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -283,9 +202,6 @@
 				TargetAttributes = {
 					40C5FC242357FD2D00910E7E = {
 						CreatedOnToolsVersion = 11.1;
-					};
-					A162AD2426FA3F2600C53EB5 = {
-						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
@@ -303,7 +219,6 @@
 			projectRoot = "";
 			targets = (
 				40C5FC242357FD2D00910E7E /* NamingMachaine */,
-				A162AD2426FA3F2600C53EB5 /* JTM */,
 			);
 		};
 /* End PBXProject section */
@@ -317,14 +232,6 @@
 				40C5FC2E2357FD2E00910E7E /* MainMenu.xib in Resources */,
 				40A547EA2367361D00CE8A21 /* FileGenerateController.xib in Resources */,
 				40C5FC392357FE0700910E7E /* MainController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A162AD2326FA3F2600C53EB5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1F64B30272A018100075B27 /* Home.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,24 +296,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A162AD2126FA3F2600C53EB5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A162AD2C26FA3F2600C53EB5 /* SourceEditorExtension.swift in Sources */,
-				A162AD2E26FA3F2600C53EB5 /* SourceEditorCommand.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A162AD3226FA3F2600C53EB5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A162AD2426FA3F2600C53EB5 /* JTM */;
-			targetProxy = A162AD3126FA3F2600C53EB5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		40C5FC2C2357FD2E00910E7E /* MainMenu.xib */ = {
@@ -545,11 +435,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20210901;
+				CURRENT_PROJECT_VERSION = 20220213;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NamingMachaine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSDesktopFolderUsageDescription = "Store generated files";
 				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Store file in folder";
@@ -560,8 +451,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.1.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.sweetman.iJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -578,11 +469,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20210901;
+				CURRENT_PROJECT_VERSION = 20220213;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NamingMachaine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSDesktopFolderUsageDescription = "Store generated files";
 				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Store file in folder";
@@ -593,71 +485,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.1.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.sweetman.iJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		A162AD3526FA3F2600C53EB5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A161FC0E2733499A00A36FD7 /* ExtensionApp.xcconfig */;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = JTM/JTM.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20210901;
-				DEVELOPMENT_TEAM = 92A277ZDK2;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JTM/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 S.M. Technology. All rights reserved.";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.2;
-				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.sweetman.iJSON.JTM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		A162AD3626FA3F2600C53EB5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = JTM/JTM.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20210901;
-				DEVELOPMENT_TEAM = 92A277ZDK2;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JTM/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 S.M. Technology. All rights reserved.";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.2;
-				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.sweetman.iJSON.JTM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -679,15 +510,6 @@
 			buildConfigurations = (
 				40C5FC342357FD2E00910E7E /* Debug */,
 				40C5FC352357FD2E00910E7E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A162AD3726FA3F2600C53EB5 /* Build configuration list for PBXNativeTarget "JTM" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A162AD3526FA3F2600C53EB5 /* Debug */,
-				A162AD3626FA3F2600C53EB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

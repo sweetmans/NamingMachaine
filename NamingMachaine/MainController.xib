@@ -44,11 +44,11 @@
                             <rect key="frame" x="0.0" y="670" width="1200" height="50"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-YC-ydm">
-                                    <rect key="frame" x="48" y="21" width="373" height="19"/>
+                                    <rect key="frame" x="48" y="21" width="381" height="19"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="19" id="ppu-Ar-oxz"/>
                                     </constraints>
-                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Naming Machaine: JSON text formetter &amp; generator" id="cCR-PS-RPu">
+                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Naming Machaine: JSON Text Formetter &amp; Generator" id="cCR-PS-RPu">
                                         <font key="font" metaFont="systemSemibold" size="15"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
