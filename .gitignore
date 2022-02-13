@@ -93,3 +93,5 @@ github/.DS_Store
 NamingMachaine.xcodeproj/
 NamingMachaine.xcworkspace/
 Pods/Target Support Files/Pods-NamingMachaine/
+
+.DS_Store

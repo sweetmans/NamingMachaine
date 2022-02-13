@@ -1,0 +1,7 @@
+//
+//  Copyright © 2021 S.M. Technology. All rights reserved.
+//
+
+#include "Pods/Target Support Files/Pods-NamingMachaine/Pods-NamingMachaine.release.xcconfig"
+
+PRODUCT_NAME = Naming Machaine
