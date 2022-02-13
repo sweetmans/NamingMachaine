@@ -89,3 +89,7 @@ iOSInjectionProject/
 .DS_Store
 .DS_Store
 github/.DS_Store
+
+NamingMachaine.xcodeproj/
+NamingMachaine.xcworkspace/
+Pods/Target Support Files/Pods-NamingMachaine/
