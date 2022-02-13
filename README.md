@@ -1,5 +1,4 @@
 <p align="center" >
-	<img src="https://github.com/sweetmans/NamingMachaine/blob/develop/github/assets/appstore-preview-3.png" title="SMInstagramPhotoPicker" float=left>
 	<img src="https://github.com/sweetmans/NamingMachaine/blob/develop/github/assets/appstore-preview.png" title="SMInstagramPhotoPicker" float=left>
 </p>
 
@@ -17,11 +16,10 @@ Support native JSONDecoder
 It just work!
 
 Now you could using Swift default JSONDecoder to generator you model file.Now we are displaying all row from you json text instead display only first object.
-
 [![License](https://img.shields.io/cocoapods/l/SMInstagramPhotoPicker.svg?style=flat)](http://cocoapods.org/pods/SMInstagramPhotoPicker)
 
 ### If you want to support me.
-Buy from Mac AppStore just: $1.99 [Mac AppStore](https://apps.apple.com/us/app/ijson-model-generator/id1486894478)
+### Buy from Mac AppStore just: `$1.99`  [Mac AppStore](https://apps.apple.com/us/app/ijson-model-generator/id1486894478)
 
 ### What's new on v1.2.0
 - [x] Rename to NamingMachaine
