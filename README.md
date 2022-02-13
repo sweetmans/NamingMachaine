@@ -20,22 +20,17 @@ Now you could using Swift default JSONDecoder to generator you model file.Now we
 
 [![License](https://img.shields.io/cocoapods/l/SMInstagramPhotoPicker.svg?style=flat)](http://cocoapods.org/pods/SMInstagramPhotoPicker)
 
-### If you want to support me. Buy from Mac AppStore just $1.99 [Mac AppStore](https://apps.apple.com/us/app/ijson-model-generator/id1486894478)
-### Downloads [macOS v1.2.0](https://github.com/sweetmans/NamingMachaine/files/6749306/iJSON-app.zip)
+### If you want to support me.
+Buy from Mac AppStore just: $1.99 [Mac AppStore](https://apps.apple.com/us/app/ijson-model-generator/id1486894478)
 
 ### What's new on v1.2.0
 - [x] Rename to NamingMachaine
 - [x] New Icon. 
 
-### If you want join & contribute code, just implement and send pull-request. Thanks for help.
-
-## Requirements
-
+### Requirements
 - macOS 11 or later
 - Xcode 11.0 or later
-- swift 5
-
-## Getting Started
+- swift 5.3
 
 ### Build Project
 NamingMachaine dependency is using [CocoaPods](http://cocoapods.org). To build project you need run `pod install` first.
@@ -44,11 +39,9 @@ NamingMachaine dependency is using [CocoaPods](http://cocoapods.org). To build p
 https://apps.apple.com/us/app/ijson-generator/id1486894478
 
 ## Licenses
-
 All source code is licensed under the [MIT License](https://raw.github.com/rs/SDWebImage/master/LICENSE).
 
-## Author
-
+## Copyright
 - [x] Copyright © 2022 S.M. Technology Ltd. All rights reserved.
 - [x] GUANGZHOU CITY. CN 510000 
 - [x] [https://www.sweetman.cc](https://www.sweetman.cc)
