@@ -1,7 +1,8 @@
 //
-//  Copyright © 2021 S.M. Technology. All rights reserved.
+//   Copyright © 2022 S.M. Technology Ltd. All rights reserved.
 //
 
 #include "Pods/Target Support Files/Pods-NamingMachaine/Pods-NamingMachaine.debug.xcconfig"
 
-BUNDLE_DISPLAY_NAME = Naming Machine
+PRODUCT_NAME = Naming Machaine
+BUNDLE_DISPLAY_NAME = Naming Machaine

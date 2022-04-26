@@ -1,11 +1,12 @@
 //
-//  Copyright © 2021 S.M. Technology. All rights reserved.
+//   Copyright © 2022 S.M. Technology Ltd. All rights reserved.
 //
 
 import Cocoa
 import SwiftyJSON
 import FilesProvider
 import EasyPeasy
+import NamingSystem
 
 //TODO: - Display Formating JSON text to the table view with lines
 class MainController: NSViewController {
@@ -101,7 +102,7 @@ class MainController: NSViewController {
             storeFolderLabel.stringValue = path
             print(result)
         } else {
-
+            
         }
     }
 }
@@ -133,17 +134,17 @@ extension MainController: NSTableViewDataSource, NSTableViewDelegate {
             view.addSubview(keyLabel)
             let keyLabelLeading: CGFloat = CGFloat(rows[row].level) * leadingMargin
             keyLabel <- [Width(width), Leading(keyLabelLeading), Height(Measurements.tableViewRowHeight), Top(0)]
-                            let valueLabel: NSTextField = NSTextField()
-                            valueLabel.backgroundColor = NSColor.clear
-                            valueLabel.stringValue =  "\(rows[row].value)"
-                            valueLabel.font = rows[row].font
-                            valueLabel.isBordered = false
-                            valueLabel.textColor = rows[row].color
-                            valueLabel.alignment = .left
-                            view.addSubview(valueLabel)
-                            let valueLabelLeading: CGFloat = CGFloat(rows[row].level) * leadingMargin + width
-                            valueLabel <- [Trailing(0), Leading(valueLabelLeading), Height(Measurements.tableViewRowHeight), Top(0)]
-                                            return view
+            let valueLabel: NSTextField = NSTextField()
+            valueLabel.backgroundColor = NSColor.clear
+            valueLabel.stringValue =  "\(rows[row].value)"
+            valueLabel.font = rows[row].font
+            valueLabel.isBordered = false
+            valueLabel.textColor = rows[row].color
+            valueLabel.alignment = .left
+            view.addSubview(valueLabel)
+            let valueLabelLeading: CGFloat = CGFloat(rows[row].level) * leadingMargin + width
+            valueLabel <- [Trailing(0), Leading(valueLabelLeading), Height(Measurements.tableViewRowHeight), Top(0)]
+            return view
         }else{
             let view: NSView = NSView(frame: NSRect(x: 0, y: 0, width: tableColumn?.width ?? 0, height: Measurements.tableViewRowHeight))
             let label: NSTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: tableColumn?.width ?? 0, height: Measurements.tableViewRowHeight))

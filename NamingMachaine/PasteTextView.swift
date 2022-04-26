@@ -1,5 +1,5 @@
 //
-//  Copyright © 2021 S.M. Technology. All rights reserved.
+//   Copyright © 2022 S.M. Technology Ltd. All rights reserved.
 //
 
 import Foundation

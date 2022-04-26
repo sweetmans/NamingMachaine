@@ -44,7 +44,7 @@
                             <rect key="frame" x="0.0" y="670" width="1200" height="50"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-YC-ydm">
-                                    <rect key="frame" x="48" y="21" width="381" height="19"/>
+                                    <rect key="frame" x="68" y="21" width="381" height="19"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="19" id="ppu-Ar-oxz"/>
                                     </constraints>
@@ -55,14 +55,14 @@
                                     </textFieldCell>
                                 </textField>
                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P8W-Sx-4TT">
-                                    <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                    <rect key="frame" x="30" y="10" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="P8W-Sx-4TT" secondAttribute="height" multiplier="1:1" id="tQc-hs-wle"/>
                                     </constraints>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-1024" id="ZHs-n5-RPP"/>
                                 </imageView>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6VJ-sr-6Fh">
-                                    <rect key="frame" x="48" y="7" width="321" height="14"/>
+                                    <rect key="frame" x="68" y="7" width="321" height="14"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="au2-hy-SeZ"/>
                                     </constraints>
@@ -78,7 +78,7 @@
                                 <constraint firstItem="P8W-Sx-4TT" firstAttribute="top" secondItem="7d4-nq-cU2" secondAttribute="top" constant="10" id="6tM-S5-fFh"/>
                                 <constraint firstAttribute="bottom" secondItem="P8W-Sx-4TT" secondAttribute="bottom" constant="10" id="Ahs-bW-SKP"/>
                                 <constraint firstItem="c1I-YC-ydm" firstAttribute="leading" secondItem="P8W-Sx-4TT" secondAttribute="trailing" constant="10" id="Gty-ws-8IF"/>
-                                <constraint firstItem="P8W-Sx-4TT" firstAttribute="leading" secondItem="7d4-nq-cU2" secondAttribute="leading" constant="10" id="VhM-zO-lns"/>
+                                <constraint firstItem="P8W-Sx-4TT" firstAttribute="leading" secondItem="7d4-nq-cU2" secondAttribute="leading" constant="30" id="VhM-zO-lns"/>
                                 <constraint firstItem="6VJ-sr-6Fh" firstAttribute="leading" secondItem="c1I-YC-ydm" secondAttribute="leading" id="rZx-sM-r7d"/>
                                 <constraint firstItem="6VJ-sr-6Fh" firstAttribute="top" secondItem="c1I-YC-ydm" secondAttribute="bottom" id="tjo-Mm-1Sr"/>
                                 <constraint firstItem="c1I-YC-ydm" firstAttribute="top" secondItem="P8W-Sx-4TT" secondAttribute="top" id="z7y-bO-06h"/>
@@ -218,7 +218,7 @@
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="20"/>
+                                            <real key="value" value="4"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                             <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -380,7 +380,7 @@
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="10"/>
+                                            <real key="value" value="2"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                             <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
