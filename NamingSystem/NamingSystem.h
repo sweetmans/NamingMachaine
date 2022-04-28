@@ -1,9 +1,5 @@
 //
-//  NamingSystem.h
-//  NamingSystem
-//
-//  Created by ANDY HUANG on 2022/4/26.
-//  Copyright © 2022 S.M. Technology, Ltd. All rights reserved.
+//   Copyright © 2022 S.M. Technology Ltd. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

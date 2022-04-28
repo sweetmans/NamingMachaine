@@ -48,11 +48,13 @@ public class JSONModel: NSObject {
 }
 
 extension JSONModel {
-    public func createModelString(type: DecoderType) -> String {
+    public func createModelString(type: DecoderType, isIncludedHeader: Bool = false) -> String {
         var text: String = ""
         if (self.level == 0) {
             fileName = "\(name).swift"
-            text.append(creatCopyrightString(type: type))
+            if isIncludedHeader {
+                text.append(creatCopyrightString(type: type))
+            }
         }
         return "\(text)\(createStruct(text: text, type: type))"
     }
