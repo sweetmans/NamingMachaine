@@ -1,17 +1,23 @@
 //
-//  Copyright © 2021 S.M. Technology. All rights reserved.
+//   Copyright © 2022 S.M. Technology Ltd. All rights reserved.
 //
 
 import Cocoa
 
-enum DecoderType: Int {
+public enum DecoderType: Int {
     case swiftDecoder = 0
     case swiftyJSON = 1
 }
 
 //TODO: FIX value type is `Array` loop Implement issue
-class JSONModel: NSObject {
-    init(dictionary: Dictionary<String, Any>, name: String, key: String, level: Int) {
+public class JSONModel: NSObject {
+    public var fileName = "DefaultFileName"
+    public var name: String
+    public var key: String
+    public var level:Int = 0
+    public var values: [String: ModelValue] = [String: ModelValue]()
+    
+    public init(dictionary: Dictionary<String, Any>, name: String, key: String, level: Int) {
         self.key = key
         self.name = name
         self.level = level
@@ -39,20 +45,16 @@ class JSONModel: NSObject {
             values[key] = value
         }
     }
-    
-    var fileName = "DefaultFileName"
-    var name: String
-    var key: String
-    var level:Int = 0
-    var values: [String: ModelValue] = [String: ModelValue]()
 }
 
 extension JSONModel {
-    func createModelString(type: DecoderType) -> String {
+    public func createModelString(type: DecoderType, isIncludedHeader: Bool = false) -> String {
         var text: String = ""
         if (self.level == 0) {
             fileName = "\(name).swift"
-            text.append(creatCopyrightString(type: type))
+            if isIncludedHeader {
+                text.append(creatCopyrightString(type: type))
+            }
         }
         return "\(text)\(createStruct(text: text, type: type))"
     }
@@ -60,7 +62,7 @@ extension JSONModel {
     //copy right string
     private func creatCopyrightString(type: DecoderType) -> String {
         let importSwityJsonLibrary = type == .swiftyJSON ? "\nimport SwiftyJSON" : ""
-        return "//\n//  \(fileName)\n//\n//  Created by iJSON Swift model generator on \(getTimeString()).\n//  Copyright © \(getYearString()). All rights reserved.\n//\n\nimport Foundation\(importSwityJsonLibrary)\n\n"
+        return "//\n//  \(fileName)\n//\n//  Created by Naming Machine on \(getTimeString()).\n//  Copyright © \(getYearString()). All rights reserved.\n//\n\nimport Foundation\(importSwityJsonLibrary)\n\n"
     }
     
     private func getTimeString() -> String {

@@ -46,11 +46,11 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-# Pods/
+Pods/
 #
 # Add this line if you want to avoid checking in source code from the #Xcode workspace
-# *.xcworkspace
-# Podfile.lock
+*.xcworkspace
+Podfile.lock
 
 # Carthage
 #
@@ -64,7 +64,7 @@ Dependencies/
 .accio/
 
 # fastlane
-#
+#git
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
@@ -83,10 +83,11 @@ fastlane/test_output
 iOSInjectionProject/
 
 #IntelJ IDE file
-/.idea
+.idea
 
 .DS_Store
-.DS_Store
-.DS_Store
 github/.DS_Store
-.DS_Store
+
+NamingMachaine.xcodeproj/
+NamingMachaine.xcworkspace/
+Pods/Target Support Files/Pods-NamingMachaine/

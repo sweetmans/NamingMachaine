@@ -10,6 +10,7 @@ As an Apple developer. You need more time to think about your app. You don't hav
 
 Written using swift
 So easy to use. Generate the model file and drag the file to your Xcode project. And done!
+Support Xcode extension to covert JSON text within Xcode.
 Support Swift 5 and above
 Support SwityJSON Framework
 Support native JSONDecoder
@@ -21,14 +22,18 @@ Now you could using Swift default JSONDecoder to generator you model file.Now we
 ### If you want to support me.
 ### Buy from Mac AppStore just: `$1.99`  [Mac AppStore](https://apps.apple.com/us/app/ijson-model-generator/id1486894478)
 
+### What's new on v1.3.0
+- [x] Adding Xcode extension to covert JSON text within Xcode.
+- [x] Sepreate JSON Model handle logic to a Framework called NamingSystem.
+
 ### What's new on v1.2.0
 - [x] Rename to NamingMachaine
 - [x] New Icon. 
 
 ### Requirements
 - macOS 11 or later
-- Xcode 11.0 or later
-- swift 5.3
+- Xcode 13
+- swift 5.x
 
 ### Build Project
 NamingMachaine dependency is using [CocoaPods](http://cocoapods.org). To build project you need run `pod install` first.

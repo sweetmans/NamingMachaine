@@ -1,5 +1,5 @@
 //
-//  Copyright © 2021 S.M. Technology. All rights reserved.
+//   Copyright © 2022 S.M. Technology Ltd. All rights reserved.
 //
 
 import Cocoa
@@ -24,7 +24,7 @@ internal extension CALayer {
 internal extension NSColor {
     func tintedColor() -> NSColor {
         var h = CGFloat(), s = CGFloat(), b = CGFloat(), a = CGFloat()
-        let rgbColor = usingColorSpaceName(NSColorSpaceName.calibratedRGB)
+        let rgbColor = usingColorSpace(NSColorSpace.sRGB)
         rgbColor?.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
         return NSColor(hue: h, saturation: s, brightness: b == 0 ? 0.2 : b * 0.8, alpha: a)
     }

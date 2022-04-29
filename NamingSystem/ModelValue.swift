@@ -1,11 +1,11 @@
 //
-//  Copyright © 2021 S.M. Technology. All rights reserved.
+//   Copyright © 2022 S.M. Technology Ltd. All rights reserved.
 //
 
 import Cocoa
 
-struct ModelValue {
-    enum ValueType: String {
+public struct ModelValue {
+    public enum ValueType: String {
         case bool = "Bool"
         case string = "String"
         case int = "Int"
@@ -16,17 +16,17 @@ struct ModelValue {
         case unknow = "Unknow"
     }
     
-    var key: String
-    var value: Any?
-    var type: ValueType
+    public var key: String
+    public var value: Any?
+    public var type: ValueType
     
-    init(key: String, value: Any?) {
+    public init(key: String, value: Any?) {
         self.key = key
         self.value = value
         self.type = ModelValue.getTypeFrom(value: value)
     }
     
-    static func getTypeFrom(value: Any?) -> ValueType {
+    public static func getTypeFrom(value: Any?) -> ValueType {
         if value == nil { return .null }
         switch value {
         case let number as NSNumber:
@@ -48,7 +48,7 @@ struct ModelValue {
         }
     }
     
-    mutating func changeValue (newValue: Any) {
+    public mutating func changeValue (newValue: Any) {
         value = newValue
     }
 }

@@ -1,29 +1,29 @@
 //
-//  Copyright © 2021 S.M. Technology. All rights reserved.
+//   Copyright © 2022 S.M. Technology Ltd. All rights reserved.
 //
 
 import Cocoa
 
-struct JSONRow {
-    struct Measurements {
-        static let heavyFont = NSFont(name: "Menlo Bold Italic", size: 14) ?? NSFont.systemFont(ofSize: 14)
-        static var stringColor: NSColor { return .systemRed }
-        static var doubleColor: NSColor { return .systemPurple }
-        static var intColor: NSColor { return .systemPurple }
-        static var boolColor: NSColor { return .systemPink }
-        static var nilColor: NSColor { return .systemPink }
-        static var defaultColor: NSColor { return .systemPurple }
-        static var keyColor: NSColor { return .systemGreen }
-        static var arrayColor: NSColor { return .systemOrange}
+public struct JSONRow {
+    public struct Measurements {
+        public static let heavyFont = NSFont(name: "Menlo Bold Italic", size: 14) ?? NSFont.systemFont(ofSize: 14)
+        public static var stringColor: NSColor { return .systemRed }
+        public static var doubleColor: NSColor { return .systemPurple }
+        public static var intColor: NSColor { return .systemPurple }
+        public static var boolColor: NSColor { return .systemPink }
+        public static var nilColor: NSColor { return .systemPink }
+        public static var defaultColor: NSColor { return .systemPurple }
+        public static var keyColor: NSColor { return .systemGreen }
+        public static var arrayColor: NSColor { return .systemOrange}
     }
     
-    var color: NSColor
-    var level: Int
-    var value: String
-    var key: String
-    var font: NSFont = NSFont(name: "Menlo Bold", size: 13) ?? NSFont.systemFont(ofSize: 13)
+    public var color: NSColor
+    public var level: Int
+    public var value: String
+    public var key: String
+    public var font: NSFont = NSFont(name: "Menlo Bold", size: 13) ?? NSFont.systemFont(ofSize: 13)
     
-    static func getAllRows(From object: Any) -> [JSONRow] {
+    public static func getAllRows(From object: Any) -> [JSONRow] {
         var jsonRows: [JSONRow] = []
         if let dictionary = object as? Dictionary<String, Any> {
             let rows = getRowsFromDictionary(dictionary: dictionary, rootLevel: 0, rootKey: "", fromArray: false)
@@ -36,7 +36,7 @@ struct JSONRow {
         return jsonRows
     }
     
-    static func getRowsFromDictionary(dictionary: Dictionary<String, Any>,
+    public static func getRowsFromDictionary(dictionary: Dictionary<String, Any>,
                                       rootLevel: Int,
                                       rootKey: String,
                                       fromArray: Bool) -> [JSONRow] {
@@ -75,7 +75,7 @@ struct JSONRow {
         return rows
     }
     
-    static func getRowsFrom(array: [Any], rootLevel: Int, key: String) -> [JSONRow]  {
+    public static func getRowsFrom(array: [Any], rootLevel: Int, key: String) -> [JSONRow]  {
         let subLevel = rootLevel + 1
         var rows: [JSONRow] = []
         for (index, object) in array.enumerated() {
