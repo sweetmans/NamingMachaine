@@ -4,5 +4,5 @@
 
 #include "Pods/Target Support Files/Pods-NamingMachaine/Pods-NamingMachaine.release.xcconfig"
 
-PRODUCT_NAME = Naming Machaine
-BUNDLE_DISPLAY_NAME = Naming Machaine
+BUNDLE_DISPLAY_NAME = Naming Machine
+PRODUCT_NAME = Naming Machine

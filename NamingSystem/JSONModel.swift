@@ -62,7 +62,7 @@ extension JSONModel {
     //copy right string
     private func creatCopyrightString(type: DecoderType) -> String {
         let importSwityJsonLibrary = type == .swiftyJSON ? "\nimport SwiftyJSON" : ""
-        return "//\n//  \(fileName)\n//\n//  Created by iJSON Swift model generator on \(getTimeString()).\n//  Copyright © \(getYearString()). All rights reserved.\n//\n\nimport Foundation\(importSwityJsonLibrary)\n\n"
+        return "//\n//  \(fileName)\n//\n//  Created by Naming Machine on \(getTimeString()).\n//  Copyright © \(getYearString()). All rights reserved.\n//\n\nimport Foundation\(importSwityJsonLibrary)\n\n"
     }
     
     private func getTimeString() -> String {

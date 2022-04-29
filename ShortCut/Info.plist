@@ -23,5 +23,7 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.dt.Xcode.extension.source-editor</string>
 	</dict>
+	<key>PRODUCT_MODULE_NAME</key>
+	<string>ShortCut</string>
 </dict>
 </plist>

@@ -22,23 +22,22 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         guard let selectedLines = getSeletedLines(from: invocation) as? [String],
               selectedLines.count > 0,
-              let json = getJson(from: selectedLines) else {
+              let json = getJson(from: selectedLines, completionHandler: completionHandler) else {
             return completionHandler(nil)
         }
         let trimmedText = json.json.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: " ", with: "")
-        checkJSONTextIsVaildFormate(for: trimmedText)
-        guard let d = dicnaryObject else {return}
+        checkJSONTextIsVaildFormate(for: trimmedText, completionHandler: completionHandler)
+        guard let d = dicnaryObject else { return completionHandler(ExtensionInternalError()) }
         let jsonModel = JSONModel(dictionary: d, name: json.name, key: json.name, level: 0)
-        let modelText = jsonModel.createModelString(type: .swiftDecoder, isIncludedHeader: false)
+        let modelText = jsonModel.createModelString(type: .swiftDecoder, isIncludedHeader: true)
         if let range = getSelctedLinesRange(from: invocation) {
             invocation.buffer.lines.removeObjects(in: range)
         }
         invocation.buffer.lines.addObjects(from: [modelText])
-        print(json.json)
         completionHandler(nil)
     }
     
-    private func getJson(from selectedLines: [String]) -> NASJSON? {
+    private func getJson(from selectedLines: [String], completionHandler: @escaping (Error?) -> Void ) -> NASJSON? {
         var json: NASJSON? = nil
         let removedBlankLinesSelection = selectedLines.filter{ $0.replacingOccurrences(of: " ", with: "") != "\n" }
         var jsonStrings = removedBlankLinesSelection
@@ -53,6 +52,9 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                 json = NASJSON(name: name, json: jsonString)
                 break
             }
+        }
+        if json == nil {
+            completionHandler(FileNameNotProvidedError())
         }
         return json
     }
@@ -69,7 +71,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         return NSRange(start...end)
     }
     
-    private func checkJSONTextIsVaildFormate(for text: String) {
+    private func checkJSONTextIsVaildFormate(for text: String, completionHandler: @escaping (Error?) -> Void ) {
         guard let data: Data = text.data(using: .utf8) else { return }
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
@@ -79,8 +81,8 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             } else if let array = jsonObject as? [Any] {
                 handleArrayObject(From: array)
             }
-        } catch let e {
-           print(e)
+        } catch {
+            completionHandler(IncorrectJSONFormatError())
         }
     }
     
@@ -104,5 +106,13 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
 
 
 struct FileNameNotProvidedError: Error {
-    var localizedDescription: String = "You must provide root object name for you Model. e.g. :<name:StoreFront>"
+    var localizedDescription: String = "File name not provided in first selected line."
+}
+
+struct IncorrectJSONFormatError: Error {
+    var localizedDescription: String = "Wrong JSON Format"
+}
+
+struct ExtensionInternalError: Error {
+    var localizedDescription: String = "Could not indentify errors"
 }
