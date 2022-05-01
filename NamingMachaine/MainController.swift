@@ -10,7 +10,6 @@ import NamingSystem
 
 //TODO: - Display Formating JSON text to the table view with lines
 class MainController: NSViewController {
-    var downloadsPath: String = ""
     struct Measurements {
         static let tableViewRowHeight: CGFloat = 20.0
     }
@@ -23,13 +22,10 @@ class MainController: NSViewController {
     @IBOutlet weak var lineClipView: NSClipView!
     @IBOutlet weak var lineTableView: NSTableView!
     @IBOutlet var textField: PasteTextView!
-    @IBOutlet weak var rootNameTextField: NSTextField!
     @IBOutlet weak var decoderPopIpButtonCell: NSPopUpButtonCell!
     
-    @IBOutlet weak var storeFolderLabel: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        downloadsPath = "/Users/\(NSUserName())/Downloads"
         prepareForTableView()
         prepareForTextField()
     }
@@ -45,65 +41,17 @@ class MainController: NSViewController {
         textField.textColor = .systemYellow
         textField.delegate = self
         textField.pasteDelegate = self
-        storeFolderLabel.stringValue = downloadsPath.dropFirst().replacingOccurrences(of: "/", with: " > ")
     }
     
     @IBAction func startButtonAction(_ sender: NSButton) {
-        if !iSSourceJsonTextVaild {
-            showWrongSourceJsonTextErrorWhenGenaratingModelFile()
+        JSONProvider.shared.showSavePanel()
+    }
+    
+    @IBAction func didChangeDecoder(_ sender: NSPopUpButtonCell) {
+        guard let tag = decoderPopIpButtonCell.selectedItem?.tag, let type = DecoderType(rawValue: tag) else {
             return
         }
-        if rootNameTextField.stringValue == "" || rootNameTextField == nil {
-            showInputNameTextNilError()
-            return
-        }
-        genarateFile(fileName: rootNameTextField.stringValue)
-    }
-    
-    private func showFileGenerateController() {
-        let mvc = FileGenerateController(windowNibName: "FileGenerateController")
-        if let window = mvc.window {
-            NSApp.mainWindow?.beginCriticalSheet(window, completionHandler: { (resp) in
-                
-            })
-        }
-    }
-    
-    private func genarateFile(fileName: String) {
-        guard let d = dicnaryObject else {return}
-        let jsonModel = JSONModel(dictionary: d, name: fileName, key: fileName, level: 0)
-        var modelText: String
-        if let tag = decoderPopIpButtonCell.selectedItem?.tag, let type = DecoderType(rawValue: tag) {
-            modelText = jsonModel.createModelString(type: type)
-        }else {
-            modelText = jsonModel.createModelString(type: .swiftDecoder)
-        }
-        let createFilePath = "\(downloadsPath)/\(jsonModel.fileName)"
-        let done = FileManager.default.createFile(atPath: createFilePath, contents: modelText.data(using: .utf8), attributes: nil)
-        if done {
-            NSWorkspace.shared.open(URL(fileURLWithPath: createFilePath))
-            NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: downloadsPath)
-        }else{
-            showGenarateFileError()
-        }
-    }
-    
-    @IBAction func chooseFolder(_ sender: FlatButton) {
-        let dialog = NSOpenPanel()
-        dialog.title = "Choose folder to store your swift model file."
-        dialog.showsResizeIndicator = true
-        dialog.showsHiddenFiles = false
-        dialog.canChooseFiles = false
-        dialog.canChooseDirectories = true
-        if (dialog.runModal() ==  NSApplication.ModalResponse.OK) {
-            guard let result = dialog.url?.path else { return }
-            downloadsPath = result
-            let path = result.dropFirst().replacingOccurrences(of: "/", with: " > ")
-            storeFolderLabel.stringValue = path
-            print(result)
-        } else {
-            
-        }
+        JSONProvider.shared.setDecoderType(type: type)
     }
 }
 
@@ -185,17 +133,17 @@ extension MainController: NSTextViewDelegate {
                 handleArrayObject(From: array)
             } else {
                 textField.textColor = .systemRed
-                showJsonIsNotDcitionaryError()
+                ErrorHandler.showJsonIsNotDcitionaryError()
             }
-        } catch let e {
+        } catch let error {
             textField.textColor = .systemRed
-            showWrongJsonTextError(error: e)
+            ErrorHandler.showWrongJsonTextError(error: error)
         }
     }
     
     private func handleDictionaryObject(From dictionary: Dictionary<String, Any>) {
-        let fileName = self.rootNameTextField.stringValue == "" ? "ROOT" : self.rootNameTextField.stringValue
-        model = JSONModel(dictionary: dictionary, name: fileName, key: fileName, level: 0)
+        model = JSONModel(dictionary: dictionary, name: "ROOT", key: "ROOT", level: 0)
+        JSONProvider.shared.setDicnaryObject(object: dictionary)
         dicnaryObject = dictionary
         iSSourceJsonTextVaild = true
         textField.textColor = .systemGreen
@@ -211,57 +159,8 @@ extension MainController: NSTextViewDelegate {
             }
         } else {
             textField.textColor = .systemRed
-            showArrayEmptyError()
+            ErrorHandler.showArrayEmptyError()
         }
-    }
-}
-
-extension MainController {
-    fileprivate func showWrongJsonTextError(error: Error) {
-        let alert = NSAlert()
-        alert.messageText = "Wrong JSON Text!"
-        alert.informativeText = error.localizedDescription
-        alert.icon = NSImage(named: "Error")
-        alert.runModal()
-    }
-    
-    fileprivate func showWrongSourceJsonTextErrorWhenGenaratingModelFile() {
-        let alert = NSAlert()
-        alert.messageText = "Your JSON text are invaild!"
-        alert.informativeText = "Pleace check your JSON text and press (Enter key) before genarate model file."
-        alert.icon = NSImage(named: "Error")
-        alert.runModal()
-    }
-    
-    fileprivate func showGenarateFileError() {
-        let alert = NSAlert()
-        alert.messageText = "Can' t not save file to Downloads folder!"
-        alert.icon = NSImage(named: "Error")
-        alert.runModal()
-    }
-    
-    fileprivate func showJsonIsNotDcitionaryError() {
-        let alert = NSAlert()
-        alert.messageText = "Your JSON is Not Dictionary!"
-        alert.informativeText = "We only support `Dictionary` Type this version."
-        alert.icon = NSImage(named: "Error")
-        alert.runModal()
-    }
-    
-    fileprivate func showInputNameTextNilError() {
-        let alert = NSAlert()
-        alert.messageText = "Input your root object name"
-        alert.informativeText = "A root object name is request for genarator naming system."
-        alert.icon = NSImage(named: "Error")
-        alert.runModal()
-    }
-    
-    fileprivate func showArrayEmptyError() {
-        let alert = NSAlert()
-        alert.messageText = "You are entering empty Array!"
-        alert.informativeText = "A object as an <Array> must not empty."
-        alert.icon = NSImage(named: "Error")
-        alert.runModal()
     }
 }
 

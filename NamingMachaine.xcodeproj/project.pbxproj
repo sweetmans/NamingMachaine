@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40A547EA2367361D00CE8A21 /* FileGenerateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A547E92367361D00CE8A21 /* FileGenerateController.xib */; };
-		40A547EE23674BC700CE8A21 /* FileGenerateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A547ED23674BC700CE8A21 /* FileGenerateController.swift */; };
 		40C5FC292357FD2D00910E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C5FC282357FD2D00910E7E /* AppDelegate.swift */; };
 		40C5FC2B2357FD2E00910E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C5FC2A2357FD2E00910E7E /* Assets.xcassets */; };
 		40C5FC2E2357FD2E00910E7E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5FC2C2357FD2E00910E7E /* MainMenu.xib */; };
@@ -16,6 +14,9 @@
 		40C5FC392357FE0700910E7E /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5FC372357FE0700910E7E /* MainController.xib */; };
 		539BF4A483566E9C572A6770 /* Pods_NamingMachaine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BBB28B8DEF2FD3AA6557D4 /* Pods_NamingMachaine.framework */; };
 		A1119459281AF18400155F9D /* NamingSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C1C8E228181FAB00ABCB8E /* NamingSystem.framework */; };
+		A11567DE281EB3FD00B00732 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11567DD281EB3FD00B00732 /* MainMenu.swift */; };
+		A11567E0281EE15300B00732 /* JSONProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11567DF281EE15300B00732 /* JSONProvider.swift */; };
+		A11567E2281F0D1B00B00732 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11567E1281F0D1B00B00732 /* ErrorHandler.swift */; };
 		A1409499281B0EFC000D732C /* StoreFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1409498281B0EFC000D732C /* StoreFront.swift */; };
 		A18820FB26B5DCAF007AF13A /* PasteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18820FA26B5DCAF007AF13A /* PasteTextView.swift */; };
 		A1C1C8E628181FAB00ABCB8E /* NamingSystem.docc in Sources */ = {isa = PBXBuildFile; fileRef = A1C1C8E528181FAB00ABCB8E /* NamingSystem.docc */; };
@@ -113,8 +114,6 @@
 /* Begin PBXFileReference section */
 		4064782D236C6E8F0099C125 /* JSONRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRow.swift; sourceTree = "<group>"; };
 		40A547D523669F2900CE8A21 /* ModelValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelValue.swift; sourceTree = "<group>"; };
-		40A547E92367361D00CE8A21 /* FileGenerateController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileGenerateController.xib; sourceTree = "<group>"; };
-		40A547ED23674BC700CE8A21 /* FileGenerateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGenerateController.swift; sourceTree = "<group>"; };
 		40C5FC252357FD2D00910E7E /* NamingMachaine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NamingMachaine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C5FC282357FD2D00910E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C5FC2A2357FD2E00910E7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +125,9 @@
 		40CAEDF9235A30FD00DF17D6 /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
 		5A017A2879D8E6B09643EF63 /* Pods-NamingMachaine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NamingMachaine.debug.xcconfig"; path = "Target Support Files/Pods-NamingMachaine/Pods-NamingMachaine.debug.xcconfig"; sourceTree = "<group>"; };
 		6F6E22345984C416C2062AFC /* Pods-NamingMachaine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NamingMachaine.release.xcconfig"; path = "Target Support Files/Pods-NamingMachaine/Pods-NamingMachaine.release.xcconfig"; sourceTree = "<group>"; };
+		A11567DD281EB3FD00B00732 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		A11567DF281EE15300B00732 /* JSONProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONProvider.swift; sourceTree = "<group>"; };
+		A11567E1281F0D1B00B00732 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		A12D4975268A8B400069514B /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
 		A1409498281B0EFC000D732C /* StoreFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFront.swift; sourceTree = "<group>"; };
 		A162AD2626FA3F2600C53EB5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -191,7 +193,6 @@
 			children = (
 				40C5FC2C2357FD2E00910E7E /* MainMenu.xib */,
 				40C5FC372357FE0700910E7E /* MainController.xib */,
-				40A547E92367361D00CE8A21 /* FileGenerateController.xib */,
 				40C5FC2A2357FD2E00910E7E /* Assets.xcassets */,
 				40C5FC2F2357FD2E00910E7E /* Info.plist */,
 				40C5FC302357FD2E00910E7E /* NamingMachaine.entitlements */,
@@ -203,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				40C5FC282357FD2D00910E7E /* AppDelegate.swift */,
+				A11567DF281EE15300B00732 /* JSONProvider.swift */,
+				A11567E1281F0D1B00B00732 /* ErrorHandler.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -212,7 +215,7 @@
 			children = (
 				40C5FC362357FE0700910E7E /* MainController.swift */,
 				A18820FA26B5DCAF007AF13A /* PasteTextView.swift */,
-				40A547ED23674BC700CE8A21 /* FileGenerateController.swift */,
+				A11567DD281EB3FD00B00732 /* MainMenu.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -453,7 +456,6 @@
 			files = (
 				40C5FC2B2357FD2E00910E7E /* Assets.xcassets in Resources */,
 				40C5FC2E2357FD2E00910E7E /* MainMenu.xib in Resources */,
-				40A547EA2367361D00CE8A21 /* FileGenerateController.xib in Resources */,
 				40C5FC392357FE0700910E7E /* MainController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,10 +530,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11567DE281EB3FD00B00732 /* MainMenu.swift in Sources */,
 				40C5FC382357FE0700910E7E /* MainController.swift in Sources */,
+				A11567E0281EE15300B00732 /* JSONProvider.swift in Sources */,
+				A11567E2281F0D1B00B00732 /* ErrorHandler.swift in Sources */,
 				40C5FC292357FD2D00910E7E /* AppDelegate.swift in Sources */,
 				A18820FB26B5DCAF007AF13A /* PasteTextView.swift in Sources */,
-				40A547EE23674BC700CE8A21 /* FileGenerateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +738,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220430;
+				CURRENT_PROJECT_VERSION = 20220501;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -742,7 +746,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Naming Machaine";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSDesktopFolderUsageDescription = "Store generated files";
-				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Store files in folder";
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "Save files to your Documents folder.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = " Copyright © 2022 S.M. Technology Ltd. All rights reserved.";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -768,7 +772,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220430;
+				CURRENT_PROJECT_VERSION = 20220501;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -776,7 +780,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Naming Machaine";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSDesktopFolderUsageDescription = "Store generated files";
-				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Store files in folder";
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "Save files to your Documents folder.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = " Copyright © 2022 S.M. Technology Ltd. All rights reserved.";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -800,7 +804,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220430;
+				CURRENT_PROJECT_VERSION = 20220501;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -835,7 +839,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220430;
+				CURRENT_PROJECT_VERSION = 20220501;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -909,7 +913,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220430;
+				CURRENT_PROJECT_VERSION = 20220501;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -940,7 +944,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220430;
+				CURRENT_PROJECT_VERSION = 20220501;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;

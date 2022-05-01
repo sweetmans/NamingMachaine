@@ -48,7 +48,7 @@ public class JSONModel: NSObject {
 }
 
 extension JSONModel {
-    public func createModelString(type: DecoderType, isIncludedHeader: Bool = false) -> String {
+    public func createModelString(type: DecoderType, isIncludedHeader: Bool = true) -> String {
         var text: String = ""
         if (self.level == 0) {
             fileName = "\(name).swift"

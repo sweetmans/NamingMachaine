@@ -24,8 +24,8 @@ Now you could using Swift default JSONDecoder to generator you model file.Now we
 
 ### What's new on v1.3.0
 - [x] Adding Xcode extension to covert JSON text within Xcode.
-- [x] Sepreate JSON Model handle logic to a Framework called NamingSystem.
-
+- [x] Separate JSON Model handle logic to a Framework called NamingSystem.
+- [x] Use Save Panel to input root object name & save file.
 ### What's new on v1.2.0
 - [x] Rename to NamingMachaine
 - [x] New Icon. 
