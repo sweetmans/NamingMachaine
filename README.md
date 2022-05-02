@@ -1,5 +1,6 @@
 <p align="center" >
-	<img src="https://github.com/sweetmans/NamingMachaine/blob/develop/github/assets/appstore-preview.png" title="SMInstagramPhotoPicker" float=left>
+	<img src="https://github.com/sweetmans/NamingMachaine/blob/develop/github/assets/shot1.png" title="" float=left>
+	<img src="https://github.com/sweetmans/NamingMachaine/blob/develop/github/assets/shot2.png" title="" float=left>
 </p>
 
 ## NamingMachaine Swift model generator
