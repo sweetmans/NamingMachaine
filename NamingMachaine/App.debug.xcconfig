@@ -4,5 +4,10 @@
 
 #include "Pods/Target Support Files/Pods-NamingMachaine/Pods-NamingMachaine.debug.xcconfig"
 
-BUNDLE_DISPLAY_NAME = Naming Machine DEV
-PRODUCT_NAME = Naming Machine
+BUNDLE_DISPLAY_NAME = JSON Naming Machine DEV
+PRODUCT_NAME = JSON Naming Machine
+
+CURRENT_PROJECT_VERSION = 20220917
+MARKETING_VERSION = 13.0.0
+
+MACOSX_DEPLOYMENT_TARGET = 12.0

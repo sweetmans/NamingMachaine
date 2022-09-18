@@ -32,7 +32,7 @@
 		A1FFE8F02817EBDD00EA5E3D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A162AD2626FA3F2600C53EB5 /* Cocoa.framework */; };
 		A1FFE8F42817EBDD00EA5E3D /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FFE8F32817EBDD00EA5E3D /* SourceEditorExtension.swift */; };
 		A1FFE8F62817EBDD00EA5E3D /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FFE8F52817EBDD00EA5E3D /* SourceEditorCommand.swift */; };
-		A1FFE8FB2817EBDD00EA5E3D /* Naming Machine Short Cut.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A1FFE8EF2817EBDD00EA5E3D /* Naming Machine Short Cut.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A1FFE8FB2817EBDD00EA5E3D /* Naming Machine Short Cut.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1FFE8EF2817EBDD00EA5E3D /* Naming Machine Short Cut.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A1FFE8FF2817EBED00EA5E3D /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A162AD2826FA3F2600C53EB5 /* XcodeKit.framework */; };
 		A1FFE9002817EBED00EA5E3D /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A162AD2826FA3F2600C53EB5 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -76,15 +76,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A162AD3426FA3F2600C53EB5 /* Embed App Extensions */ = {
+		A162AD3426FA3F2600C53EB5 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A1FFE8FB2817EBDD00EA5E3D /* Naming Machine Short Cut.appex in Embed App Extensions */,
+				A1FFE8FB2817EBDD00EA5E3D /* Naming Machine Short Cut.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A1C1C8FC28181FAC00ABCB8E /* Embed Frameworks */ = {
@@ -333,7 +333,7 @@
 				40C5FC222357FD2D00910E7E /* Frameworks */,
 				40C5FC232357FD2D00910E7E /* Resources */,
 				181C284E14C22378D9FC6A7F /* [CP] Embed Pods Frameworks */,
-				A162AD3426FA3F2600C53EB5 /* Embed App Extensions */,
+				A162AD3426FA3F2600C53EB5 /* Embed Foundation Extensions */,
 				A1C1C8FC28181FAC00ABCB8E /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -410,7 +410,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "S.M. Technology, Ltd.";
 				TargetAttributes = {
 					40C5FC242357FD2D00910E7E = {
@@ -645,6 +645,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -707,6 +708,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -738,7 +740,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220501;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -754,8 +756,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.sweetman.iJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -772,7 +772,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220501;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -788,8 +788,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.sweetman.iJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -801,10 +799,11 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20220501;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -836,10 +835,11 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20220501;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -873,6 +873,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -892,6 +893,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -913,7 +915,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220501;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -925,8 +927,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.sweetman.iJSON.ShortCut;
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
@@ -944,7 +944,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20220501;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 92A277ZDK2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -956,8 +956,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.sweetman.iJSON.ShortCut;
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
